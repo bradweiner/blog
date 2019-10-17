@@ -1,0 +1,48 @@
+---
+authors:
+- brad
+bio: My research interests include higher education policy, data science, enrollment management, and institutional advancement.
+education:
+  courses:
+  - course: PhD, Educational Policy and Administration
+    institution: University of Minnesota, Twin-Cities
+    year: 2014
+  - course: M.Ed, Higher Education Administration
+    institution: Peabody College, Vanderbilt University 
+    year: 2006
+  - course: BA, English
+    institution: The University of Kansas
+    year: 2002
+email: ""
+interests:
+- Data Science
+- R
+- Higher Education Policy
+- Enrollment Management
+- Financial Aid
+- Institutional Advancement
+name: Brad Weiner
+organizations:
+- name: "Senior Director of Data Science, Capture Higher Ed"
+  url: "https://twitter.com/brad_weiner"
+role: ""
+social:
+- icon: envelope
+  icon_pack: fas
+  link: '#contact'
+- icon: twitter
+  icon_pack: fab
+  link: https://twitter.com/brad_weiner
+- icon: github
+  icon_pack: fab
+  link: https://github.com/bradweiner
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/bradweinerprofile/
+superuser: true
+user_groups:
+---
+
+Brad Weiner is the Senior Director of Data Science at Capture Higher Ed. He lives in Minneapolis, MN.
+
+

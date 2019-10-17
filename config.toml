@@ -1,0 +1,108 @@
+# Configuration of Academic
+# Documentation: https://sourcethemes.com/academic/
+#
+# This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
+# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
+
+# Title of your site
+title = "Brad Weiner's Personal Webpage"
+
+# The URL of your site.
+# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+baseurl = ""
+
+# Enter a copyright notice to display in the site footer.
+# To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
+copyright = "&copy; 2019, Brad Weiner"
+
+############################
+## Advanced options below ##
+############################
+
+# Name of Academic theme folder in `themes/`.
+theme = "hugo-academic"
+
+# Get last modified date for content from Git?
+enableGitInfo = false
+
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
+defaultContentLanguageInSubdir = false
+removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
+
+paginate = 10  # Number of items per page in paginated lists.
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[outputs]
+  home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
+  section = [ "HTML", "RSS" ]
+
+[mediaTypes."application/manifest+json"]
+  suffixes = ["webmanifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+
+# Configure BlackFriday Markdown rendering.
+#   See: https://gohugo.io/getting-started/configuration/#configure-blackfriday
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab. See https://github.com/gohugoio/hugo/issues/2424
+	angledQuotes = false
+	latexDashes = true
+  extensions = ["backslashLineBreak"]
+
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 90
+  anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
+
+# Taxonomies.
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
+  author = "authors"
+  
+  
+ # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
+  #   youtube, instagram, soundcloud
+  #
+  #   For email icon, use "fa" icon pack, "envelope" icon, and
+  #   "mailto:your@email.com" as the link.
+  #
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #
+  #   Full list: https://jpswalsh.github.io/academicons/
+  
+  [[params.social]]
+    icon = "paper-plane"
+    icon_pack = "fa"
+    link = "mailto:bradweiner@gmail.com"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/brad_weiner"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "//github.com/bradweiner"
+    
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//linkedin.com/in/bradweinerprofile/"
+
