@@ -1,6 +1,5 @@
 [build]
   command = "hugo"
-  base    = "blog"
   publish = "public"
 
 [build.environment]
