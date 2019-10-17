@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Brad Weiner&#39;s Personal Webpage</title>
-    <link>/authors/brad/</link>
-      <atom:link href="/authors/brad/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://bradweiner.netlify.com/authors/brad/</link>
+      <atom:link href="https://bradweiner.netlify.com/authors/brad/index.xml" rel="self" type="application/rss+xml" />
     <description>Brad Weiner&#39;s Personal Webpage</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019, Brad Weiner</copyright><lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://bradweiner.netlify.com/img/icon-192.png</url>
       <title>Brad Weiner&#39;s Personal Webpage</title>
-      <link>/authors/brad/</link>
+      <link>https://bradweiner.netlify.com/authors/brad/</link>
     </image>
     
     <item>
       <title>Testing This Thing Out</title>
-      <link>/post/testing_it_out/testing-this-thing-out/</link>
+      <link>https://bradweiner.netlify.com/post/testing_it_out/testing-this-thing-out/</link>
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>/post/testing_it_out/testing-this-thing-out/</guid>
+      <guid>https://bradweiner.netlify.com/post/testing_it_out/testing-this-thing-out/</guid>
       <description>
 
 
