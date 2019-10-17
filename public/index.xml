@@ -119,9 +119,9 @@
     
     <item>
       <title>Writing technical content in Academic</title>
-      <link>/post/writing-technical-content/</link>
+      <link>/deleted_posts/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>/post/writing-technical-content/</guid>
+      <guid>/deleted_posts/writing-technical-content/</guid>
       <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
@@ -345,9 +345,9 @@ gantt
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
+      <link>/deleted_posts/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/jupyter/</guid>
+      <guid>/deleted_posts/jupyter/</guid>
       <description>
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
@@ -636,9 +636,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Academic: the website builder for Hugo</title>
-      <link>/post/getting-started/</link>
+      <link>/deleted_posts/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/post/getting-started/</guid>
+      <guid>/deleted_posts/getting-started/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
@@ -777,9 +777,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <link>/deleted_posts/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <guid>/deleted_posts/2015-07-23-r-rmarkdown/</guid>
       <description>
 
 
