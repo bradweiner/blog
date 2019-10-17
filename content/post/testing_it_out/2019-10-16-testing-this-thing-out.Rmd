@@ -8,7 +8,7 @@ tags:
   - test
   - monkey
 subtitle: 'This Thing'
-summary: 'Why Am I Doing This?'
+summary: 'Why Am I Doing This? Seriously.'
 authors: [Brad]
 lastmod: '2019-10-16T12:08:36-05:00'
 featured: no
