@@ -34,12 +34,15 @@ Colleges and universities have a multi-generational responsibility to society an
 
 When playing such a long game, institutions of higher ed (henceforth IHE) rarely have the agility or culture to respond to the newest technology or processes. To be clear, this isn't necessarily a bad thing. If IHE acted like startups and swung wildly between product offerings or management fads, it could undermine their very place in our societies. 
 
-Furthermore, I am not suggesting that IHE don't have top talent. Many of the best data scientists (and engineers and playwrights) enjoy careers in academia. Many campuses are populated with top minds doing basic research and creating the seeds that ultimately grow into companies like Google.
+Furthermore, I am not suggesting that IHE don't have top talent. Setting aside the hard-working, well-intentioned, and underappreciated administrators and student affairs professionals, many of the best data scientists (and engineers and playwrights) enjoy academic careers.
 
-The challenge is that the data science business problems being solved right on campus, are  
-slow to find their way into the daily administration and policymaking. Changing campus policies and culture are very difficult because it involves the rare coordination of many stakeholders, each with disparate or competing interests.
+The challenge, as I see it, is that IHE, forced by declining public support, have been slow to adopt at least _some_ of the technological advancements that could have a real impact on institutional health. Should robots teach courses or poorly-understood AI algorithms replace student advising? Probably not. 
 
-Hopefully this blog reaches some of those stakeholders including education policy analysts, institutional researchers, or enrollment managers. Or, if those folks aren't interested, I'm ok if it's read by Uber drivers generous enough to take me through the line at White Castle.
+Should campuses learn to optimize their financial aid awards and classroom management to incrementally improve their enrollments or retention? Of course. Those distinctions might be subtle, and the brush with which I am painting is broad. But my general thought is that IHE shouldn't live in some futuristic techno-utopia. But they shouldn't lag too far behind either.
+
+Changing campus policies and culture are very difficult because it involves the rare coordination of many stakeholders, each with disparate or competing interests.
+
+Hopefully this blog reaches some of those stakeholders including education policy analysts, institutional researchers, enrollment managers, students, faculty, staff, donors, or fans. If none of those folks are interested, then maybe I'll enjoy writing it for the total pleasure of changing words into ones and zeros.
 
 ####**Podcasting was fun. So why not try this?**
 
@@ -57,7 +60,7 @@ For the unitiated, R is an open-source statistical programming language that is 
 
 ####**Other duties as assigned**
 
-This classic phrase is listed in every higher ed job description. It basically is a catch all for all of the things that the employer hasn't thought of. It also becomes something of an in joke when you are standing in the freezing cold, pointing families to an orientation parking garage and thinking, "I went to grad school for this?"
+This classic phrase is listed in every higher ed job description. It basically is a catch all for all of the things that the employer hasn't thought of. It also becomes something of an in-joke among admissions and student affairs professionals who find themselves standing in the freezing cold, pointing families to an orientation parking garage and thinking, "I went to grad school for this?"
 
 This blog and site, will eventually have more stuff. Look out for portfolio items, tutorials, code-throughs, and other data sciencey stock photos.
 
