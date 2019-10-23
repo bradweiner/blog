@@ -59,7 +59,7 @@ For the unitiated, R is an open-source statistical programming language that is 
 
 This classic phrase is listed in every higher ed job description. It basically is a catch all for all of the things that the employer hasn't thought of. It also becomes something of an in joke when you are standing in the freezing cold, pointing families to an orientation parking garage and thinking, "I went to grad school for this?"
 
-This blog and site, will eventually have more stuff. Some tutorials and code throughs, some professional-looking things that attempt to make me look cool, and maybe some stock photos.
+This blog and site, will eventually have more stuff. Look out for portfolio items, tutorials, code-throughs, and other data sciencey stock photos.
 
 Thanks for coming along for the ride.
 
