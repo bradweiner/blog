@@ -15,11 +15,9 @@ education:
     year: 2002
 email: ""
 interests:
-- Data Science
+- Data Science + Education Policy
 - R
-- Higher Education Policy
 - Enrollment Management
-- Financial Aid
 - Institutional Advancement
 name: Brad Weiner
 organizations:

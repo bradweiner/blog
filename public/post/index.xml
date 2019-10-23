@@ -5,12 +5,59 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019, Brad Weiner</copyright><lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019, Brad Weiner</copyright><lastBuildDate>Fri, 18 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Why I’m Starting a Blog</title>
+      <link>/post/why-i-m-starting-a-blog/</link>
+      <pubDate>Fri, 18 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/why-i-m-starting-a-blog/</guid>
+      <description>
+
+
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1350&amp;amp;q=80&#34; alt=&#34;Photo by Chris Reid&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Photo by Chris Reid&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Welcome. I’m so glad you could make it.&lt;/p&gt;
+&lt;p&gt;If I had a dollar for every person whose told me I should start a blog, I wouldn’t have very much money. For the sake of conversation, let’s call that value zero.&lt;/p&gt;
+&lt;p&gt;Just because there’s a lack of overt market demand, I went ahead anyway. Here’s why:&lt;/p&gt;
+&lt;div id=&#34;the-intersection-of-higher-education-and-data-science-is-still-relatively-underexplored.&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;&lt;strong&gt;The intersection of higher education and data science is still relatively underexplored.&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Colleges and universities have a multi-generational responsibility to society and should be held in the public trust. Long after tech companies relocate for lunar, Martian, or Irish tax and regulatory benefits, Stanford will be shifting engineering paradigms in the heart of Silicon Valley.&lt;/p&gt;
+&lt;p&gt;When playing such a long game, institutions of higher ed (henceforth IHE) rarely have the agility or culture to respond to the newest technology or processes. To be clear, this isn’t necessarily a bad thing. If IHE acted like startups and swung wildly between product offerings or management fads, it could undermine their very place in our societies.&lt;/p&gt;
+&lt;p&gt;Furthermore, I am not suggesting that IHE don’t have top talent. Many of the best data scientists (and engineers and playwrights) enjoy careers in academia. Many campuses are populated with top minds doing basic research and creating the seeds that ultimately grow into companies like Google.&lt;/p&gt;
+&lt;p&gt;The challenge is that the data science business problems being solved right on campus, are&lt;br /&gt;
+slow to find their way into the daily administration and policymaking. Changing campus policies and culture are very difficult because it involves the rare coordination of many stakeholders, each with disparate or competing interests.&lt;/p&gt;
+&lt;p&gt;Hopefully this blog reaches some of those stakeholders including education policy analysts, institutional researchers, or enrollment managers. Or, if those folks aren’t interested, I’m ok if it’s read by Uber drivers generous enough to take me through the line at White Castle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;podcasting-was-fun.-so-why-not-try-this&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;&lt;strong&gt;Podcasting was fun. So why not try this?&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;I like to try new things and have fun. When my friend and former colleague, Thom Golden proposed a podcast about enrollment management and data science, I figured it would be a fun way to test out the technology and achieve the lifelong dream of getting paid to drink beer. Three years, 36 episodes, and 20,000 downloads later, &lt;a href=&#34;https://www.capturehighered.com/category/weightlist/&#34;&gt;The Weightlist&lt;/a&gt; jumped the shark with an ill-advised episode about p-values.&lt;/p&gt;
+&lt;p&gt;Even though that experiment was done, there was still a universe of topics that would be fun to discuss. So…here we are.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;work-is-my-dinner-side-projects-are-my-dessert&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;&lt;strong&gt;Work is my dinner, side projects are my dessert&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;There is a scene in the not-as-good-as-Good-Will-Hunting film, &lt;a href=&#34;https://www.imdb.com/title/tt0181536/&#34;&gt;&lt;em&gt;Finding Forrester&lt;/em&gt;&lt;/a&gt;, where a Pulitzer Prize-winning author played by Sean Connery sits down with a copy of the &lt;em&gt;National Enquirer&lt;/em&gt;. His young protégé comments on the trashiness of the publication. Connery’s character responds “I read The Times for dinner. This is my dessert.”&lt;/p&gt;
+&lt;p&gt;The comparison isn’t perfect, but I’ve always enjoyed having projects that are related to my professional work, but different enough to allow me to learn new statistical methods or test out different R packages.&lt;/p&gt;
+&lt;p&gt;For the unitiated, R is an open-source statistical programming language that is utilized by many data scientsts. It provides an endless wellspring of interesting packages, including a robust suite of tools called &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34;&gt;Blogdown&lt;/a&gt; which uses R Markdown to create easily-deployable static pages. I am absolutely stoked to get this deployed and begin playing around in the sandbox.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;other-duties-as-assigned&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;&lt;strong&gt;Other duties as assigned&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;This classic phrase is listed in every higher ed job description. It basically is a catch all for all of the things that the employer hasn’t thought of. It also becomes something of an in joke when you are standing in the freezing cold, pointing families to an orientation parking garage and thinking, “I went to grad school for this?”&lt;/p&gt;
+&lt;p&gt;This blog and site, will eventually have more stuff. Some tutorials and code throughs, some professional-looking things that attempt to make me look cool, and maybe some stock photos.&lt;/p&gt;
+&lt;p&gt;Thanks for coming along for the ride.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;next-blog-up-acknoledgements-and-thank-yous&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;strong&gt;Next Blog Up: Acknoledgements and Thank Yous&lt;/strong&gt;&lt;/h3&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Testing This Thing Out</title>
@@ -20,7 +67,7 @@
       <description>
 
 
-&lt;p&gt;So. Here is a blog. Let’s see how this works.&lt;/p&gt;
+&lt;p&gt;It seems like everyone has a blog.&lt;/p&gt;
 </description>
     </item>
     
