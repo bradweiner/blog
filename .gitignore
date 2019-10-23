@@ -3,7 +3,9 @@
 .RData
 .Ruserdata
 blogdown/
-public/
+/public
+public/*
+/public/
 # Ignore everything
 #*
 
