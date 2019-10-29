@@ -30,17 +30,23 @@ Just because there's a lack of overt market demand, I went ahead anyway. Here's 
 
 ####**The intersection of higher education and data science is still relatively underexplored.**
 
-Colleges and universities have a multi-generational responsibility to society and should be held in the public trust. Long after tech companies relocate for lunar, Martian, or Irish tax and regulatory benefits, Stanford will be shifting engineering paradigms in the heart of Silicon Valley.
+Colleges and universities have a multi-generational responsibility to society and should be held in the public trust. Long after tech companies relocate for lunar, Martian, or Irish tax benefits, Stanford will be shifting engineering paradigms in the heart of Silicon Valley.
 
 When playing such a long game, institutions of higher ed (henceforth IHE) rarely have the agility or culture to respond to the newest technology or processes. To be clear, this isn't necessarily a bad thing. If IHE acted like startups and swung wildly between product offerings or management fads, it could undermine their very place in our societies. 
 
-Furthermore, I am not suggesting that IHE don't have top talent. Setting aside the hard-working, well-intentioned, and underappreciated administrators and student affairs professionals, many of the best data scientists (and engineers and playwrights) enjoy academic careers.
+Nor are IHE deprived of top talent. Many of the best data scientists (and engineers and playwrights) enjoy academic careers to say nothing of the hard-working, and underappreciated administrators and student affairs professionals, 
 
-The challenge, as I see it, is that IHE, forced by declining public support, have been slow to adopt at least _some_ of the technological advancements that could have a real impact on institutional health. Should robots teach courses or poorly-understood AI algorithms replace student advising? Probably not. 
+The challenge, as I see it, is that IHE, forced by declining public support, have been slow to adopt at least _some_ of the technological advancements that could have a real impact on institutional health. 
 
-Should campuses learn to optimize their financial aid awards and classroom management to incrementally improve their enrollments or retention? Of course. Those distinctions might be subtle, and the brush with which I am painting is broad. But my general thought is that IHE shouldn't live in some futuristic techno-utopia. But they shouldn't lag too far behind either.
+Should robots teach courses or poorly-specified AI algorithms replace student advising? Probably not. 
 
-Changing campus policies and culture are very difficult because it involves the rare coordination of many stakeholders, each with disparate or competing interests.
+Should campuses learn to optimize their financial aid awards and classroom management to incrementally improve their enrollments or retention? Of course. 
+
+Those distinctions might be subtle, and the brush with which I am painting is broad. But my general thought is that IHE shouldn't live in some futuristic techno-utopia. But they shouldn't lag too far behind either.
+
+So how does an institution land in this extremely narrow sweet spot? In one of two ways: incrementally with narrow changes that appeal to the widest swath of competing stakeholder interests or quickly, out of survival due to some obvious and rapid exogeneous shock.
+
+Either way, it is going to take a lot of folks to think through old problems in new ways. 
 
 Hopefully this blog reaches some of those stakeholders including education policy analysts, institutional researchers, enrollment managers, students, faculty, staff, donors, or fans. If none of those folks are interested, then maybe I'll enjoy writing it for the total pleasure of changing words into ones and zeros.
 
