@@ -1,0 +1,768 @@
+---
+title: The Modal Institution of Higher Education
+author: Brad
+date: '2019-10-28'
+slug: modal-institution
+categories:
+  - highered
+  - R
+tags:
+  - datascience
+  - highered
+  - IPEDS
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2019-10-28T20:49:48-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>I have enjoyed NPR’s <a href="https://www.npr.org/podcasts/510289/planet-money">Planet Money</a> podcast for many years. They always have an interesting perspective on matters foreign and domestic; macro and micro; trivial and critical. It’s also a space that doesn’t shy away from wonky, data-filled policy debates.</p>
+<p>A recent episode, <a href="https://www.npr.org/2019/08/28/755191639/episode-936-the-modal-american"><em>The Modal American</em></a>, talked listeners through a full analytic pipeline including the research question, an explanation of the methodology and the results.</p>
+<p>Planet Money’s specific research question was whether they could aggregate <a href="https://ipums.org/">IPUMS</a> data (Go Gophers!) to find the “most typical” American using the <em>mode</em> as their measure of central tendancy.</p>
+<p>To do this, they conscripted the estimiable NYT reporter Ben Casselman, who generously shared his <a href="https://github.com/BenCasselman/planet_money">code repo</a> so anyone could replicate or repurpose the analysis.</p>
+<center>
+{{% tweet "1168869571497025536" %}}
+</center>
+<p>Finding the modal anything is interesting, but as someone who likes to think about education policy, I was happy to find that Isabella Velásquez used the methodology to look for the <a href="https://ivelasq.rbind.io/blog/modal-district/">Modal School District</a>.</p>
+<p>Buiding on her work, I thought it would be interesting to aggregate IPEDS data to find the “Modal Institution of Higher Education.”</p>
+<div id="who-cares" class="section level3">
+<h3>Who Cares?</h3>
+<p>Averages provide a shortcut for understanding what a “typical” thing (i.e. human height, widget, economy, giraffe age, test score, price of tacos, etc.) might be. As we learned from Planet Money, our perceptions of what we think of as the “average American” might be inaccurate.</p>
+<p>If journalists or policy makers focus on an inaccurate version of “typical” then perceptions of how to improve systems might begin from an inaccurate baseline</p>
+</div>
+<div id="american-institutions-of-higher-education" class="section level3">
+<h3>American Institutions of Higher Education</h3>
+<p>Let me illustrate why this is a problem.</p>
+<p>Imagine a “typical” college or university. In your mind you probably have a four-year, highly-selective, medium-sized, private university on the East Coast. Ivy grows on Gothic buildings. Professors wear tweed while lecturing in front of equation-filled chalkboards while earnest students take notes. Frisbees are absolutely everywhere.</p>
+<p>This perception is, unfortunately, what drives the conversation about American Higher Education. Think about the recent <a href="https://en.wikipedia.org/wiki/2019_college_admissions_bribery_scandal">Operation Varsity Blues</a> incident.</p>
+<p>To be clear, there was legitimate corruption perpetrated by bad actors looking to exploit a system that is largely built on trust. But was it, as Fareed Zakaria presented, a <a href="http://cnnpressroom.blogs.cnn.com/2019/10/02/cnns-fareed-zakaria-examines-elite-college-admissions-from-the-inside/">“crisis”</a>?</p>
+<p>If an “average” college of university is the one described above, then maybe so. But if typical describes something else, then perhaps we’re missing much more interesting or important stories about higher education in America.</p>
+<p>So what is a “modal” college or university in the United States?</p>
+<p>Let’s find out.</p>
+</div>
+<div id="analysis" class="section level3">
+<h3>Analysis</h3>
+<div id="data-pull" class="section level4">
+<h4>Data Pull</h4>
+<p>Finding the “modal institution” will depend entirely on what features are selected. Rather than using features that might be influenced by the institution, I opted for institutional characteristics which are largely determined by funding mechanisms, student populations, degrees awarded, and location. Furthermore, I opted to utilize standardized, industry accepted classifications and categories to avoid subjective binning problems.</p>
+<p>Using the Integrated Postsecondary Education Data Systems (IPEDS) <a href="https://nces.ed.gov/ipeds/use-the-data">web interface</a>, I selected the universe of cases (n = 6,857) along with the following features:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+var_name
+</th>
+<th style="text-align:left;">
+var_desc
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+unit_id
+</td>
+<td style="text-align:left;">
+IPEDS UNITID
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+institution_name
+</td>
+<td style="text-align:left;">
+Institution Name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+opeflag_hd2018
+</td>
+<td style="text-align:left;">
+Title IV Flag
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stabbr_hd2018
+</td>
+<td style="text-align:left;">
+State
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sector_hd2018
+</td>
+<td style="text-align:left;">
+Sector
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iclevel_hd2018
+</td>
+<td style="text-align:left;">
+Degree Levels Offered
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+control_hd2018
+</td>
+<td style="text-align:left;">
+Institution Funding Control
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+deggrant_hd2018
+</td>
+<td style="text-align:left;">
+Degree Granting Flag
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+instcat_hd2018
+</td>
+<td style="text-align:left;">
+Degree Granting Category
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+instsize_hd2018
+</td>
+<td style="text-align:left;">
+Enrollment Size Category
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+c18basic_hd2018
+</td>
+<td style="text-align:left;">
+Carnegie Classification
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+obereg_hd2018
+</td>
+<td style="text-align:left;">
+Region Category
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="data-import-and-cleaning" class="section level4">
+<h4>Data Import and Cleaning</h4>
+<pre class="r"><code># load libraries
+
+library(tidyverse)
+library(magrittr)
+library(janitor)
+library(dataMeta)
+library(here)
+library(kableExtra)</code></pre>
+<pre class="r"><code># read in raw data files from IPEDS. 
+
+#file 1 is the raw data normalized
+d &lt;- read.csv(here(&quot;content/post/the-modal-institution-of-higher-education/data/&quot;,&quot;data_table.csv&quot;),
+              stringsAsFactors = F)
+
+#file 2 is the data dictionary from NCES/IPEDS
+e &lt;- read.csv(here(&quot;content/post/the-modal-institution-of-higher-education/data/&quot;,&quot;ValueLabels_10-11-2019---735.csv&quot;),
+              stringsAsFactors = F)</code></pre>
+<p>I always like to take a quick look at the data, just to see what I am working with. As you can see below, the variable names have been normalized with digits or codes rather than useful, human-readable labels.</p>
+<p>The data dictionary is in a long format. This means that each case in the data set represents a factor level for one of the features. In order to append on to the primary data frame, the variable names require conversion into a wide format.</p>
+<pre class="r"><code>#clean column names
+
+d &lt;- clean_names(d,case = &quot;snake&quot;)
+glimpse(d)</code></pre>
+<pre><code>## Observations: 6,857
+## Variables: 12
+## $ unit_id          &lt;int&gt; 240985, 177834, 180203, 491464, 493105, 459523,…
+## $ institution_name &lt;chr&gt; &quot;\tEducational Technical College-Recinto de Bay…
+## $ opeflag_hd2018   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1,…
+## $ stabbr_hd2018    &lt;chr&gt; &quot;PR&quot;, &quot;MO&quot;, &quot;MT&quot;, &quot;CA&quot;, &quot;CA&quot;, &quot;TX&quot;, &quot;CA&quot;, &quot;MI&quot;,…
+## $ sector_hd2018    &lt;int&gt; 6, 2, 4, 7, 99, 9, 9, 9, 9, 2, 1, 3, 9, 3, 9, 6…
+## $ iclevel_hd2018   &lt;int&gt; 2, 1, 2, 3, -3, 3, 3, 3, 3, 1, 1, 1, 3, 1, 3, 2…
+## $ control_hd2018   &lt;int&gt; 3, 2, 1, 1, -3, 3, 3, 3, 3, 2, 1, 3, 3, 3, 3, 3…
+## $ deggrant_hd2018  &lt;int&gt; 1, 1, 1, 2, -3, 2, 2, 2, 2, 1, 1, 1, 2, 1, 2, 2…
+## $ instcat_hd2018   &lt;int&gt; 4, 1, 4, 6, -2, 6, 6, 6, 6, 2, 3, 2, 6, 3, 6, 6…
+## $ instsize_hd2018  &lt;int&gt; 1, 2, 1, 1, -2, 1, 1, 1, 1, 3, 2, 1, 1, 1, 1, 1…
+## $ c18basic_hd2018  &lt;int&gt; -2, 25, 33, -2, -2, -2, -2, -2, -2, 18, 23, 31,…
+## $ obereg_hd2018    &lt;int&gt; 9, 4, 7, 8, 8, 6, 8, 3, 8, 6, 5, 8, 9, 4, 1, 7,…</code></pre>
+<pre class="r"><code>e &lt;- clean_names(e,case = &quot;snake&quot;)
+glimpse(e)</code></pre>
+<pre><code>## Observations: 146
+## Variables: 3
+## $ variable_name &lt;chr&gt; &quot;STABBR (HD2018)&quot;, &quot;STABBR (HD2018)&quot;, &quot;STABBR (HD2…
+## $ value         &lt;chr&gt; &quot;AL&quot;, &quot;AK&quot;, &quot;AZ&quot;, &quot;AR&quot;, &quot;CA&quot;, &quot;CO&quot;, &quot;CT&quot;, &quot;DE&quot;, &quot;D…
+## $ value_label   &lt;chr&gt; &quot;Alabama&quot;, &quot;Alaska&quot;, &quot;Arizona&quot;, &quot;Arkansas&quot;, &quot;Calif…</code></pre>
+<p>Although I could force the joins to match on different variable names, it is easier to lean on the automatic matching functionality in the Tidyverse. In order to leverage this, the variable names in both files required some standardizing. Below is that process writen in my odd dialect of TidyBase and in direct contravention of DRY regulations.</p>
+<pre class="r"><code>#remove the year information after the underscore in the variable names
+names(d) &lt;- gsub(&quot;_[^_]+$&quot;,&quot;&quot;,names(d))
+
+#match those names in the description file
+
+names(e)</code></pre>
+<pre><code>## [1] &quot;variable_name&quot; &quot;value&quot;         &quot;value_label&quot;</code></pre>
+<pre class="r"><code>table(e$variable_name)</code></pre>
+<pre><code>## 
+## C18BASIC (HD2018)  CONTROL (HD2018) DEGGRANT (HD2018)  ICLEVEL (HD2018) 
+##                34                 4                 3                 4 
+##  INSTCAT (HD2018) INSTSIZE (HD2018)   OBEREG (HD2018)  OPEFLAG (HD2018) 
+##                 8                 7                10                 6 
+##   SECTOR (HD2018)   STABBR (HD2018) 
+##                11                59</code></pre>
+<pre class="r"><code>e$variable_name %&lt;&gt;% tolower(.)
+e$variable_name &lt;- gsub(&quot;hd2018&quot;,replacement = &quot;&quot;, e$variable_name)
+e$variable_name &lt;- gsub(&quot;\\(&quot;,replacement = &quot;&quot;, e$variable_name)
+e$variable_name &lt;- gsub(&quot;\\)&quot;,replacement = &quot;&quot;, e$variable_name)
+e$variable_name &lt;- gsub(&quot; &quot;,replacement = &quot;&quot;, e$variable_name)
+
+table(e$variable_name)</code></pre>
+<pre><code>## 
+## c18basic  control deggrant  iclevel  instcat instsize   obereg  opeflag 
+##       34        4        3        4        8        7       10        6 
+##   sector   stabbr 
+##       11       59</code></pre>
+<p>Next we’re going to spread out the data dictionary from long to wide. I should probably admit that these transformations have always been conceptually confusing for me. Melt + cast, gather + spread, or pivot_longer/pivot_wider have always been exercises in trial + error</p>
+<pre class="r"><code># spread data dictionary from long to wide
+
+e &lt;- spread(e,key = variable_name,value = value_label)
+glimpse(e)</code></pre>
+<pre><code>## Observations: 97
+## Variables: 11
+## $ value    &lt;chr&gt; &quot;-1&quot;, &quot;-2&quot;, &quot;-3&quot;, &quot;0&quot;, &quot;1&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;, &quot;13&quot;, &quot;14…
+## $ c18basic &lt;chr&gt; NA, &quot;Not applicable, not in Carnegie universe (not accr…
+## $ control  &lt;chr&gt; NA, NA, &quot;{Not available}&quot;, NA, &quot;Public&quot;, NA, NA, NA, NA…
+## $ deggrant &lt;chr&gt; NA, NA, &quot;{Not available}&quot;, NA, &quot;Degree-granting&quot;, NA, N…
+## $ iclevel  &lt;chr&gt; NA, NA, &quot;{Not available}&quot;, NA, &quot;Four or more years&quot;, NA…
+## $ instcat  &lt;chr&gt; &quot;Not reported&quot;, &quot;Not applicable&quot;, NA, NA, &quot;Degree-grant…
+## $ instsize &lt;chr&gt; &quot;Not reported&quot;, &quot;Not applicable&quot;, NA, NA, &quot;Under 1,000&quot;…
+## $ obereg   &lt;chr&gt; NA, NA, NA, &quot;US Service schools&quot;, &quot;New England CT ME MA…
+## $ opeflag  &lt;chr&gt; NA, NA, NA, NA, &quot;Participates in Title IV federal finan…
+## $ sector   &lt;chr&gt; NA, NA, NA, &quot;Administrative Unit&quot;, &quot;Public, 4-year or a…
+## $ stabbr   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</code></pre>
+<pre class="r"><code># convert all numeric/integer variables to characters to facilitate joins
+
+e &lt;- e %&gt;%
+        mutate_if(is.integer,as.character) 
+
+d &lt;- d %&gt;%
+        mutate_if(is.integer,as.character)</code></pre>
+<p>The last data cleaning step is merging the data file with the data dictionary labels. There are many different ways to achieve this. I went with a for a loop that pulls each value, renames it, and appends.</p>
+<pre class="r"><code>#select variable names into vector
+varnames &lt;- names(e)
+varnamestest &lt;- varnames[2:length(varnames)]
+
+#begin for loop
+
+#For each of the variables in the data dictionary: 
+# - select the variable and the value
+# - remove NAs
+# - rename the value to avoid overwriting
+# - paste _val on to the variable name
+# - append to date frame
+# - repeat
+
+for(i in varnamestest){
+        
+        temp_dict &lt;- e %&gt;%
+                select(i,value) %&gt;%
+                na.omit() %&gt;%
+                rename(.,newval = value)
+        
+        names(temp_dict) &lt;- c(paste0(i,&quot;_val&quot;),i)
+        
+        join_df &lt;- left_join(d,temp_dict)
+        
+        d &lt;- join_df
+        
+       
+}
+
+glimpse(d)</code></pre>
+<pre><code>## Observations: 6,857
+## Variables: 22
+## $ unit         &lt;chr&gt; &quot;240985&quot;, &quot;177834&quot;, &quot;180203&quot;, &quot;491464&quot;, &quot;493105&quot;, &quot;…
+## $ institution  &lt;chr&gt; &quot;\tEducational Technical College-Recinto de Bayamon…
+## $ opeflag      &lt;chr&gt; &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;5&quot;, &quot;1&quot;, &quot;…
+## $ stabbr       &lt;chr&gt; &quot;PR&quot;, &quot;MO&quot;, &quot;MT&quot;, &quot;CA&quot;, &quot;CA&quot;, &quot;TX&quot;, &quot;CA&quot;, &quot;MI&quot;, &quot;OR…
+## $ sector       &lt;chr&gt; &quot;6&quot;, &quot;2&quot;, &quot;4&quot;, &quot;7&quot;, &quot;99&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;2&quot;, …
+## $ iclevel      &lt;chr&gt; &quot;2&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;-3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;1&quot;, …
+## $ control      &lt;chr&gt; &quot;3&quot;, &quot;2&quot;, &quot;1&quot;, &quot;1&quot;, &quot;-3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;2&quot;, …
+## $ deggrant     &lt;chr&gt; &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;2&quot;, &quot;-3&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;1&quot;, …
+## $ instcat      &lt;chr&gt; &quot;4&quot;, &quot;1&quot;, &quot;4&quot;, &quot;6&quot;, &quot;-2&quot;, &quot;6&quot;, &quot;6&quot;, &quot;6&quot;, &quot;6&quot;, &quot;2&quot;, …
+## $ instsize     &lt;chr&gt; &quot;1&quot;, &quot;2&quot;, &quot;1&quot;, &quot;1&quot;, &quot;-2&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;1&quot;, &quot;3&quot;, …
+## $ c18basic     &lt;chr&gt; &quot;-2&quot;, &quot;25&quot;, &quot;33&quot;, &quot;-2&quot;, &quot;-2&quot;, &quot;-2&quot;, &quot;-2&quot;, &quot;-2&quot;, &quot;-2…
+## $ obereg       &lt;chr&gt; &quot;9&quot;, &quot;4&quot;, &quot;7&quot;, &quot;8&quot;, &quot;8&quot;, &quot;6&quot;, &quot;8&quot;, &quot;3&quot;, &quot;8&quot;, &quot;6&quot;, &quot;…
+## $ c18basic_val &lt;chr&gt; &quot;Not applicable, not in Carnegie universe (not accr…
+## $ control_val  &lt;chr&gt; &quot;Private for-profit&quot;, &quot;Private not-for-profit&quot;, &quot;Pu…
+## $ deggrant_val &lt;chr&gt; &quot;Degree-granting&quot;, &quot;Degree-granting&quot;, &quot;Degree-grant…
+## $ iclevel_val  &lt;chr&gt; &quot;At least 2 but less than 4 years&quot;, &quot;Four or more y…
+## $ instcat_val  &lt;chr&gt; &quot;Degree-granting, associate&#39;s and certificates \n&quot;,…
+## $ instsize_val &lt;chr&gt; &quot;Under 1,000&quot;, &quot;1,000 - 4,999&quot;, &quot;Under 1,000&quot;, &quot;Und…
+## $ obereg_val   &lt;chr&gt; &quot;Outlying areas AS FM GU MH MP PR PW VI&quot;, &quot;Plains I…
+## $ opeflag_val  &lt;chr&gt; &quot;Participates in Title IV federal financial aid pro…
+## $ sector_val   &lt;chr&gt; &quot;Private for-profit, 2-year&quot;, &quot;Private not-for-prof…
+## $ stabbr_val   &lt;chr&gt; &quot;Puerto Rico&quot;, &quot;Missouri&quot;, &quot;Montana&quot;, &quot;California&quot;,…</code></pre>
+<p>Aside from a few weird character returns, everything is looking good. Now on to the aggregations and counts.</p>
+</div>
+<div id="aggregations" class="section level4">
+<h4>Aggregations</h4>
+<p>The final step is counting the number of institutions within each combination of these bins. Initially, I was planning to copy Ben Cassleman’s <a href="https://github.com/BenCasselman/planet_money/blob/master/final_analysis.R">code</a> but opted to use the updated version on Isabella Velásquez’s <a href="https://ivelasq.rbind.io/blog/modal-district/">“Modal School District”</a> instead.</p>
+<pre class="r"><code>#use Casselman/Velásquez code to find modal IHE
+
+d.agg &lt;- d %&gt;%
+        count(c18basic_val,
+              control_val,
+              deggrant_val,
+              iclevel_val,
+              instcat_val,
+              instsize_val,
+              obereg_val,
+              opeflag_val,
+              sector_val,
+              stabbr_val,
+              sort = TRUE) %&gt;%
+        slice(1:3)
+        
+glimpse(d.agg)</code></pre>
+<pre><code>## Observations: 3
+## Variables: 11
+## $ c18basic_val &lt;chr&gt; &quot;Not applicable, not in Carnegie universe (not accr…
+## $ control_val  &lt;chr&gt; &quot;Private for-profit&quot;, &quot;Private for-profit&quot;, &quot;Privat…
+## $ deggrant_val &lt;chr&gt; &quot;Nondegree-granting, primarily postsecondary&quot;, &quot;Non…
+## $ iclevel_val  &lt;chr&gt; &quot;Less than 2 years (below associate)&quot;, &quot;Less than 2…
+## $ instcat_val  &lt;chr&gt; &quot;Nondegree-granting, sub-baccalaureate&quot;, &quot;Nondegree…
+## $ instsize_val &lt;chr&gt; &quot;Under 1,000&quot;, &quot;Under 1,000&quot;, &quot;Under 1,000&quot;
+## $ obereg_val   &lt;chr&gt; &quot;Far West AK CA HI NV OR WA&quot;, &quot;Southwest AZ NM OK T…
+## $ opeflag_val  &lt;chr&gt; &quot;Participates in Title IV federal financial aid pro…
+## $ sector_val   &lt;chr&gt; &quot;Private for-profit, less-than 2-year&quot;, &quot;Private fo…
+## $ stabbr_val   &lt;chr&gt; &quot;California&quot;, &quot;Texas&quot;, &quot;Florida&quot;
+## $ n            &lt;int&gt; 163, 142, 97</code></pre>
+</div>
+<div id="results" class="section level4">
+<h4>Results</h4>
+<pre class="r"><code>kable(d.agg) %&gt;%
+        kable_styling(font_size = 9)</code></pre>
+<table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+c18basic_val
+</th>
+<th style="text-align:left;">
+control_val
+</th>
+<th style="text-align:left;">
+deggrant_val
+</th>
+<th style="text-align:left;">
+iclevel_val
+</th>
+<th style="text-align:left;">
+instcat_val
+</th>
+<th style="text-align:left;">
+instsize_val
+</th>
+<th style="text-align:left;">
+obereg_val
+</th>
+<th style="text-align:left;">
+opeflag_val
+</th>
+<th style="text-align:left;">
+sector_val
+</th>
+<th style="text-align:left;">
+stabbr_val
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Private for-profit
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+Less than 2 years (below associate)
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Far West AK CA HI NV OR WA
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Private for-profit, less-than 2-year
+</td>
+<td style="text-align:left;">
+California
+</td>
+<td style="text-align:right;">
+163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Private for-profit
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+Less than 2 years (below associate)
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Southwest AZ NM OK TX
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Private for-profit, less-than 2-year
+</td>
+<td style="text-align:left;">
+Texas
+</td>
+<td style="text-align:right;">
+142
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Private for-profit
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+Less than 2 years (below associate)
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Southeast AL AR FL GA KY LA MS NC SC TN VA WV
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Private for-profit, less-than 2-year
+</td>
+<td style="text-align:left;">
+Florida
+</td>
+<td style="text-align:right;">
+97
+</td>
+</tr>
+</tbody>
+</table>
+<p>A quick look at the table reveals that several of the top spots differ only by geography. It’s mildly interesting that so many of these institutions are in Californa, Texas, or Florida, but given the population sizes there, this seems overly granular. Removing both the state and regional aggregations produces this:</p>
+<pre class="r"><code>kable(d.agg) %&gt;%
+        kable_styling(font_size = 9)</code></pre>
+<table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+c18basic_val
+</th>
+<th style="text-align:left;">
+control_val
+</th>
+<th style="text-align:left;">
+deggrant_val
+</th>
+<th style="text-align:left;">
+iclevel_val
+</th>
+<th style="text-align:left;">
+instcat_val
+</th>
+<th style="text-align:left;">
+instsize_val
+</th>
+<th style="text-align:left;">
+opeflag_val
+</th>
+<th style="text-align:left;">
+sector_val
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Private for-profit
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+Less than 2 years (below associate)
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Private for-profit, less-than 2-year
+</td>
+<td style="text-align:right;">
+1452
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Private for-profit
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+At least 2 but less than 4 years
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Private for-profit, 2-year
+</td>
+<td style="text-align:right;">
+226
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Public
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+Less than 2 years (below associate)
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Public, less-than 2-year
+</td>
+<td style="text-align:right;">
+220
+</td>
+</tr>
+</tbody>
+</table>
+<p>With this higher-level aggregation, it appears as though the modal institution of Higher Education is/are:</p>
+<ul>
+<li>Private for-profit</li>
+<li>Nondegree-granting</li>
+<li>Associate’s level</li>
+<li>Under 1,000 enrollment</li>
+<li>Receiving Title IV funding</li>
+</ul>
+<p>There are 1,452 of these institutions comprising a sizable 21.3% of the total universe.</p>
+<p>What, might you ask is an example of one of the modal institution? To find out, I will append the counts back to the original data set, and randomly select one for a closer zoom.</p>
+<pre class="r"><code>set.seed(8675309)
+
+modal &lt;- left_join(d,d.agg) %&gt;%
+        filter(n == max(n,na.rm = T)) %&gt;%
+        select(unit,institution,13:23) %&gt;%
+        sample_n(size = 1)</code></pre>
+<pre class="r"><code>kable(modal) %&gt;%
+        kable_styling(font_size = 9)</code></pre>
+<table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+unit
+</th>
+<th style="text-align:left;">
+institution
+</th>
+<th style="text-align:left;">
+c18basic_val
+</th>
+<th style="text-align:left;">
+control_val
+</th>
+<th style="text-align:left;">
+deggrant_val
+</th>
+<th style="text-align:left;">
+iclevel_val
+</th>
+<th style="text-align:left;">
+instcat_val
+</th>
+<th style="text-align:left;">
+instsize_val
+</th>
+<th style="text-align:left;">
+obereg_val
+</th>
+<th style="text-align:left;">
+opeflag_val
+</th>
+<th style="text-align:left;">
+sector_val
+</th>
+<th style="text-align:left;">
+stabbr_val
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+486497
+</td>
+<td style="text-align:left;">
+California Barber and Beauty College
+</td>
+<td style="text-align:left;">
+Not applicable, not in Carnegie universe (not accredited or nondegree-granting)
+</td>
+<td style="text-align:left;">
+Private for-profit
+</td>
+<td style="text-align:left;">
+Nondegree-granting, primarily postsecondary
+</td>
+<td style="text-align:left;">
+Less than 2 years (below associate)
+</td>
+<td style="text-align:left;">
+Nondegree-granting, sub-baccalaureate
+</td>
+<td style="text-align:left;">
+Under 1,000
+</td>
+<td style="text-align:left;">
+Far West AK CA HI NV OR WA
+</td>
+<td style="text-align:left;">
+Participates in Title IV federal financial aid programs
+</td>
+<td style="text-align:left;">
+Private for-profit, less-than 2-year
+</td>
+<td style="text-align:left;">
+California
+</td>
+<td style="text-align:right;">
+1452
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="the-modal-institution-is" class="section level4">
+<h4>The Modal Institution Is…</h4>
+<p>The California Barber and Beauty College.</p>
+<p>This school, and 1,451 schools like it are private, for-profit institutions that qualify for federal Title IV funding which allows schools to receive federal aid dollars from students who qualify.</p>
+<p>There is bound to be variation in the types of schools that fit into this modal bin, but it’s worth a quick look at CB&amp;B.</p>
+<p>California requires licensure for cosmetologists and barbers. Assuming Californians enjoy haircuts and makeup, this seems like a reasonable explaination for this institution’s “modal-ness” on the demand side.</p>
+<p>On the supply side, schools like the CB&amp;B keep costs low by running operations from small storefronts or malls. Without tentured faculty, physical plant, hospitals, or football teams, the barriers for entry are comparatively low.</p>
+<p>Furthermore, Certificates can be awarded in 44 weeks by anyone who 16 or older and has a diploma or GED. This is presumably a broader pool of prospective students than “Hollywood Typical” institutions that require two to four years to earn a degree.</p>
+<p>The modal-ness might also be explained by the nature of the training itself. Barbering and cosmotology require hands-on training and frequent practice, both which lend themselves to small, localized schools with individualized attention. For this reason the modal student, is probably very different from the modal institution.</p>
+</div>
+<div id="acknowledgements" class="section level4">
+<h4>Acknowledgements</h4>
+<p>I am far from the first to point out that the colleges in the movies are not the typical American institution. Since this is something like universal knowledge among higher ed wonks, I won’t be able to cite all of the places this argument is found. But a few of note are:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://fivethirtyeight.com/features/shut-up-about-harvard/">Shut Up About Harvard</a></p></li>
+<li><p><a href="https://highereddatastories.blogspot.com/2019/03/varsity-blues-and-real-admissions-data.html">Higher Ed Data Stories</a></p></li>
+</ol>
+<p>Special thanks to <a href="https://twitter.com/ivelasq3">Isabella Velásquez</a> and <a href="https://twitter.com/bencasselman?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Ben Casselman</a> for their code contributions and shoulders to stand on.</p>
+<p>Of course, thanks to <a href="https://www.npr.org/podcasts/510289/planet-money/">Planet Money</a> for continuing to create such awesome content nearly 1,000 episodes in.</p>
+<p>Errors and interpretations are the author’s alone. Please submit edits or errors to Github.</p>
+<!-- <center> -->
+<!-- ```{r, echo=FALSE} -->
+<!-- blogdown::shortcode("youtube", "O5J2_EI7go4") -->
+<!-- ``` -->
+<!-- </center> -->
+</div>
+</div>
