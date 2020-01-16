@@ -2,11 +2,13 @@
 
 library(blogdown)
 library(devtools)
+# library(root)
+
 blogdown::install_hugo()
 
 install_github("https://github.com/rstudio/blogdown")
 
-new_site(theme = "gcushen/hugo-academic")
+# new_site(theme = "gcushen/hugo-academic")
 build_site()
 serve_site()
 

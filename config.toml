@@ -105,4 +105,3 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
     icon = "linkedin"
     icon_pack = "fa"
     link = "//linkedin.com/in/bradweinerprofile/"
-
