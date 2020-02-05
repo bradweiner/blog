@@ -27,5 +27,5 @@ weight = 20
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
  [[main]]
 name = "CV/Resume"
-url = "files/resume_weiner_brad.pdf"
+url = "files/weiner_brad_resume.pdf"
 weight = 70
