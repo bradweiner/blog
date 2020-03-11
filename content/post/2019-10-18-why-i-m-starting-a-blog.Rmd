@@ -71,5 +71,3 @@ This classic phrase is listed in every higher ed job description. It basically i
 This blog and site, will eventually have more stuff. Look out for portfolio items, tutorials, code-throughs, and other data sciencey stock photos.
 
 Thanks for coming along for the ride.
-
-###**Next Blog Up: Acknoledgements and Thank Yous**
