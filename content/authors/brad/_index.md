@@ -21,7 +21,7 @@ interests:
 - Institutional Advancement
 name: Brad Weiner
 organizations:
-- name: "Senior Director of Data Science, Capture Higher Ed"
+- name: "TBA"
   url: "https://twitter.com/brad_weiner"
 role: ""
 social:
@@ -41,6 +41,6 @@ superuser: true
 user_groups:
 ---
 
-Brad Weiner is the Senior Director of Data Science at Capture Higher Ed. He lives in Minneapolis, MN.
+Brad Weiner was the Senior Director of Data Science at Capture Higher Ed. He lives in Minneapolis, MN.
 
 
