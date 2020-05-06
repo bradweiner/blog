@@ -4,7 +4,7 @@
 .Ruserdata
 blogdown/
 public/
-content/post/a_great_day_in_harlem
+content/post/a_great_day_in_harlem/*
 # Ignore everything
 #*
 
