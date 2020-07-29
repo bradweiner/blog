@@ -16,7 +16,8 @@ education:
 email: ""
 interests:
 - Data Science + Education Policy
-- R
+- Open Source Data Science in R/Python
+- Data Science Leadership
 - Enrollment Management
 - Institutional Advancement
 name: Brad Weiner
