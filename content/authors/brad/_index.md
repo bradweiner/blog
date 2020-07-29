@@ -21,8 +21,8 @@ interests:
 - Institutional Advancement
 name: Brad Weiner
 organizations:
-- name: "TBA"
-  url: "https://twitter.com/brad_weiner"
+- name: "Director of Data Science, University of Colorado Boulder"
+  url: "https://www.colorado.edu/"
 role: ""
 social:
 - icon: envelope
@@ -41,6 +41,6 @@ superuser: true
 user_groups:
 ---
 
-Brad Weiner was the Senior Director of Data Science at Capture Higher Ed. He lives in Minneapolis, MN.
+Brad Weiner is the Director of Data Science at The University of Colorado Boulder. He lives in Erie, CO.
 
 
