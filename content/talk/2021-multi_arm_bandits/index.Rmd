@@ -5,6 +5,7 @@ event: Guest Lecture in CSCI 4830 - Data Driven Design. Spring, 2021. Emilie You
 event_url: 
 location: Remote Class, University of Colorado Boulder
 abstract: 'Building experiments into your web design is critical. In this talk I discuss the optimal stopping problem and how multi-arm bandits can help move quickly from exploring to exploiting.' 
+summary: 'Multi-arm bandits and content optimization'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
