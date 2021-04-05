@@ -13,10 +13,11 @@ subtitle: 'Because the world needs another data science blog with stock photos o
 summary: ''
 authors: [Brad]
 lastmod: '2019-10-18T12:03:34-05:00'
-featured: no
+featured: yes
 image:
-  caption: ''
-  focal_point: 'center'
+  caption: 'Photo Credit Chris Ried https://unsplash.com/photos/ieic5Tq8YMk'
+  focal_point: ''
+  preview_only: no
 projects: []
 ---
 
