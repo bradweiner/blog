@@ -21,15 +21,13 @@ image:
 projects: []
 ---
 
-![](https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
-
 Welcome. I'm so glad you could make it. 
 
 If I had a dollar for every person whose told me I should start a blog, I wouldn't have very much money. For the sake of conversation, let's call that value zero.
 
 Just because there's a lack of overt market demand, I went ahead anyway. Here's why:
 
-####**The intersection of higher education and data science is still relatively underexplored.**
+#### **The intersection of higher education and data science is still relatively underexplored.**
 
 Colleges and universities have a multi-generational responsibility to society and should be held in the public trust. Long after tech companies relocate for lunar, Martian, or Irish tax benefits, Stanford will be shifting engineering paradigms in the heart of Silicon Valley.
 
@@ -51,13 +49,13 @@ Either way, it is going to take a lot of folks to think through old problems in 
 
 Hopefully this blog reaches some of those stakeholders including education policy analysts, institutional researchers, enrollment managers, students, faculty, staff, donors, or sports fans. If none of those folks are interested, then maybe I'll enjoy writing it for the total pleasure of changing words into ones and zeros.
 
-####**Podcasting was fun. So why not try this?**
+#### **Podcasting was fun. So why not try this?**
 
 I like to try new things and have fun. When my friend and former colleague, Thom Golden proposed a podcast about enrollment management and data science, I figured it would be a fun way to test out the technology and achieve the lifelong dream of getting paid to drink beer. Three years, 36 episodes, and 20,000 downloads later, [The Weightlist](https://www.capturehighered.com/category/weightlist/) jumped the shark with an ill-advised episode about p-values. 
 
 Even though that experiment was done, there was still a universe of topics that would be fun to discuss. So...here we are.
 
-####**Work is my dinner, side projects are my dessert**
+#### **Work is my dinner, side projects are my dessert**
 
 There is a scene in the not-as-good-as-Good-Will-Hunting film, [_Finding Forrester_]( https://www.imdb.com/title/tt0181536/), where a Pulitzer Prize-winning author played by Sean Connery sits down with a copy of the _National Enquirer_. His young protégé comments on the trashiness of the publication. Connery's character responds "I read The Times for dinner. This is my dessert."
 
@@ -65,7 +63,7 @@ The comparison isn't perfect, but I've always enjoyed having projects that are r
 
 For the unitiated, R is an open-source statistical programming language that is utilized by many data scientsts. It provides an endless wellspring of interesting packages, including a robust suite of tools called [Blogdown](https://bookdown.org/yihui/blogdown/) which uses R Markdown to create easily-deployable static pages. I am absolutely stoked to get this deployed and begin playing around in the sandbox.
 
-####**Other duties as assigned**
+#### **Other duties as assigned**
 
 This classic phrase is listed in every higher ed job description. It basically is a catch all for all of the things that the employer hasn't thought of. It also becomes something of an in-joke among admissions and student affairs professionals who find themselves standing in the freezing cold, pointing families to an orientation parking garage and thinking, "I went to grad school for this?"
 
