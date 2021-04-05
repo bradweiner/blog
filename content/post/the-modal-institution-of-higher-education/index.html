@@ -36,10 +36,13 @@ projects: []
 </center>
 <p>Finding the modal anything is interesting, but as someone who likes to think about education policy, I was happy to find that Isabella Velásquez used the methodology to look for the <a href="https://ivelasq.rbind.io/blog/modal-district/">Modal School District</a>.</p>
 <p>Buiding on her work, I thought it would be interesting to aggregate IPEDS data to find the “Modal Institution of Higher Education.”</p>
-<p>###Who Cares?</p>
+<div id="who-cares" class="section level3">
+<h3>Who Cares?</h3>
 <p>Averages provide a shortcut for understanding what a “typical” thing (i.e. human height, widget, economy, giraffe age, test score, price of tacos, etc.) might be. As we learned from Planet Money, our perceptions of what we think of as the “average American” might be inaccurate.</p>
 <p>If journalists or policy makers focus on an inaccurate version of “typical” then perceptions of how to improve systems might begin from an inaccurate baseline</p>
-<p>###American Institutions of Higher Education</p>
+</div>
+<div id="american-institutions-of-higher-education" class="section level3">
+<h3>American Institutions of Higher Education</h3>
 <p>Let me illustrate why this is a problem.</p>
 <p>Imagine a “typical” college or university. In your mind you probably have a four-year, highly-selective, medium-sized, private university on the East Coast. Ivy grows on Gothic buildings. Professors wear tweed while lecturing in front of equation-filled chalkboards while earnest students take notes. Frisbees are absolutely everywhere.</p>
 <p>This perception is, unfortunately, what drives the conversation about American Higher Education. Think about the recent <a href="https://en.wikipedia.org/wiki/2019_college_admissions_bribery_scandal">Operation Varsity Blues</a> incident.</p>
@@ -47,8 +50,11 @@ projects: []
 <p>If an “average” college of university is the one described above, then maybe so. But if typical describes something else, then perhaps we’re missing much more interesting or important stories about higher education in America.</p>
 <p>So what is a “modal” college or university in the United States?</p>
 <p>Let’s find out.</p>
-<p>###Analysis</p>
-<p>####Data Pull</p>
+</div>
+<div id="analysis" class="section level3">
+<h3>Analysis</h3>
+<div id="data-pull" class="section level4">
+<h4>Data Pull</h4>
 <p>Finding the “modal institution” will depend entirely on what features are selected. Rather than using features that might be influenced by the institution, I opted for institutional characteristics which are largely determined by funding mechanisms, student populations, degrees awarded, and location. Furthermore, I opted to utilize standardized, industry accepted classifications and categories to avoid subjective binning problems.</p>
 <p>Using the Integrated Postsecondary Education Data Systems (IPEDS) <a href="https://nces.ed.gov/ipeds/use-the-data">web interface</a>, I selected the universe of cases (n = 6,857) along with the following features:</p>
 <table>
@@ -320,7 +326,9 @@ glimpse(d)</code></pre>
 ## $ sector_val   &lt;chr&gt; &quot;Private for-profit, 2-year&quot;, &quot;Private not-for-profit, 4-…
 ## $ stabbr_val   &lt;chr&gt; &quot;Puerto Rico&quot;, &quot;Missouri&quot;, &quot;Montana&quot;, &quot;California&quot;, &quot;Cali…</code></pre>
 <p>Aside from a few weird character returns, everything is looking good. Now on to the aggregations and counts.</p>
-<p>####Aggregations</p>
+</div>
+<div id="aggregations" class="section level4">
+<h4>Aggregations</h4>
 <p>The final step is counting the number of institutions within each combination of these bins. Initially, I was planning to copy Ben Cassleman’s <a href="https://github.com/BenCasselman/planet_money/blob/master/final_analysis.R">code</a> but opted to use the updated version on Isabella Velásquez’s <a href="https://ivelasq.rbind.io/blog/modal-district/">“Modal School District”</a> instead.</p>
 <pre class="r"><code>#use Casselman/Velásquez code to find modal IHE
 
@@ -352,7 +360,9 @@ glimpse(d.agg)</code></pre>
 ## $ sector_val   &lt;chr&gt; &quot;Private for-profit, less-than 2-year&quot;, &quot;Private for-prof…
 ## $ stabbr_val   &lt;chr&gt; &quot;California&quot;, &quot;Texas&quot;, &quot;Florida&quot;
 ## $ n            &lt;int&gt; 163, 142, 97</code></pre>
-<p>####Results</p>
+</div>
+<div id="results" class="section level4">
+<h4>Results</h4>
 <pre class="r"><code>kable(d.agg) %&gt;%
         kable_styling(font_size = 9)</code></pre>
 <table class="table" style="font-size: 9px; margin-left: auto; margin-right: auto;">
@@ -732,7 +742,9 @@ Massachusetts
 </tr>
 </tbody>
 </table>
-<p>####The Modal Institution Is…</p>
+</div>
+<div id="the-modal-institution-is" class="section level4">
+<h4>The Modal Institution Is…</h4>
 <p>The California Barber and Beauty College.</p>
 <p>This school, and 1,451 schools like it are private, for-profit institutions that qualify for federal Title IV funding which allows schools to receive federal aid dollars from students who qualify.</p>
 <p>There is bound to be variation in the types of schools that fit into this modal bin, but it’s worth a quick look at CB&amp;B.</p>
@@ -740,7 +752,9 @@ Massachusetts
 <p>On the supply side, schools like the CB&amp;B keep costs low by running operations from small storefronts or malls. Without tentured faculty, physical plant, hospitals, or football teams, the barriers for entry are comparatively low.</p>
 <p>Furthermore, Certificates can be awarded in 44 weeks by anyone who 16 or older and has a diploma or GED. This is presumably a broader pool of prospective students than “Hollywood Typical” institutions that require two to four years to earn a degree.</p>
 <p>The modal-ness might also be explained by the nature of the training itself. Barbering and cosmotology require hands-on training and frequent practice, both which lend themselves to small, localized schools with individualized attention. For this reason the modal student, is probably very different from the modal institution.</p>
-<p>####Acknowledgements</p>
+</div>
+<div id="acknowledgements" class="section level4">
+<h4>Acknowledgements</h4>
 <p>I am far from the first to point out that the colleges in the movies are not the typical American institution. Since this is something like universal knowledge among higher ed wonks, I won’t be able to cite all of the places this argument is found. But a few of note are:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://fivethirtyeight.com/features/shut-up-about-harvard/">Shut Up About Harvard</a></p></li>
@@ -754,3 +768,5 @@ Massachusetts
 <!-- blogdown::shortcode("youtube", "O5J2_EI7go4") -->
 <!-- ``` -->
 <!-- </center> -->
+</div>
+</div>

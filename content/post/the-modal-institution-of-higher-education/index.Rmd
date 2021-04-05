@@ -42,13 +42,13 @@ Finding the modal anything is interesting, but as someone who likes to think abo
 
 Buiding on her work, I thought it would be interesting to aggregate IPEDS data to find the "Modal Institution of Higher Education."
 
-###Who Cares?
+### Who Cares?
 
 Averages provide a shortcut for understanding what a "typical" thing (i.e. human height, widget, economy, giraffe age, test score, price of tacos, etc.) might be. As we learned from Planet Money, our perceptions of what we think of as the "average American" might be inaccurate.
 
 If journalists or policy makers focus on an inaccurate version of "typical" then perceptions of how to improve systems might begin from an inaccurate baseline
 
-###American Institutions of Higher Education
+### American Institutions of Higher Education
 
 Let me illustrate why this is a problem.
 
@@ -64,11 +64,11 @@ So what is a "modal" college or university in the United States?
 
 Let's find out.
 
-###Analysis
+### Analysis
 
 
 
-####Data Pull
+#### Data Pull
 
 Finding the "modal institution" will depend entirely on what features are selected.  Rather than using features that might be influenced by the institution, I opted for institutional characteristics which are largely determined by funding mechanisms, student populations, degrees awarded, and location. Furthermore, I opted to utilize standardized, industry accepted classifications and categories to avoid subjective binning problems. 
 
@@ -255,7 +255,7 @@ glimpse(d)
 
 Aside from a few weird character returns, everything is looking good. Now on to the aggregations and counts. 
 
-####Aggregations
+#### Aggregations
 
 The final step is counting the number of institutions within each combination of these bins. Initially, I was planning to copy Ben Cassleman's [code](https://github.com/BenCasselman/planet_money/blob/master/final_analysis.R) but opted to use the updated version on Isabella Velásquez's ["Modal School District"](https://ivelasq.rbind.io/blog/modal-district/) instead.
 
@@ -282,7 +282,7 @@ glimpse(d.agg)
 ```
 
 
-####Results
+#### Results
 
 ```{r,eval=TRUE}
 kable(d.agg) %>%
@@ -342,7 +342,7 @@ kable(modal) %>%
 ```
 
 
-####The Modal Institution Is...
+#### The Modal Institution Is...
 
 The California Barber and Beauty College.
 
@@ -359,7 +359,7 @@ Furthermore, Certificates can be awarded in 44 weeks by anyone who 16 or older a
 The modal-ness might also be explained by the nature of the training itself.  Barbering and cosmotology require hands-on training and frequent practice, both which lend themselves to small, localized schools with individualized attention. For this reason the modal student, is probably very different from the modal institution.
 
 
-####Acknowledgements
+#### Acknowledgements
 
 I am far from the first to point out that the colleges in the movies are not the typical American institution. Since this is something like universal knowledge among higher ed wonks,  I won't be able to cite all of the places this argument is found. But a few of note are:
 
