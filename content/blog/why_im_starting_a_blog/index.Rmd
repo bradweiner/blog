@@ -1,0 +1,72 @@
+---
+title: Why I’m Starting a Blog
+author: Brad
+date: '2019-10-18'
+slug: why-i-m-starting-a-blog
+categories: []
+tags:
+  - datascience
+  - intro
+  - highered
+  - emchat
+subtitle: 'Because the world needs another data science blog with stock photos of code-filled screens'
+summary: ''
+authors: [Brad]
+lastmod: '2019-10-18T12:03:34-05:00'
+featured: yes
+image:
+  caption: 'Photo Credit Chris Ried https://unsplash.com/photos/ieic5Tq8YMk'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Welcome. I'm so glad you could make it. 
+
+If I had a dollar for every person whose told me I should start a blog, I wouldn't have very much money. For the sake of conversation, let's call that value zero.
+
+Just because there's a lack of overt market demand, I went ahead anyway. Here's why:
+
+#### **The intersection of higher education and data science is still relatively underexplored.**
+
+Colleges and universities have a multi-generational responsibility to society and should be held in the public trust. Long after tech companies relocate for lunar, Martian, or Irish tax benefits, Stanford will be shifting engineering paradigms in the heart of Silicon Valley.
+
+When playing such a long game, institutions of higher ed (henceforth IHE) rarely have the agility or culture to respond to the newest technology or processes. To be clear, this isn't necessarily a bad thing. If IHE acted like startups and swung wildly between product offerings or management fads, it could undermine their very place in our societies. 
+
+Nor are IHE deprived of top talent. Many of the best data scientists (and engineers and playwrights) enjoy academic careers to say nothing of the hard-working, and underappreciated administrators and student affairs professionals, 
+
+The challenge, as I see it, is that IHE, forced by declining public support, have been slow to adopt at least _some_ of the technological advancements that could have a real impact on institutional health. 
+
+Should robots teach courses or poorly-specified AI algorithms replace student advising? Probably not. 
+
+Should campuses learn to optimize their financial aid awards and classroom management to incrementally improve their enrollments or retention? Of course. 
+
+Those distinctions might be subtle, and the brush with which I am painting is broad. But my general thought is that IHE shouldn't live in some futuristic techno-utopia. But they shouldn't lag too far behind either.
+
+So how does an institution land in this extremely narrow sweet spot? In one of two ways: incrementally with narrow changes that appeal to the widest swath of competing stakeholder interests or quickly, out of survival due to some obvious and rapid exogeneous shock.
+
+Either way, it is going to take a lot of folks to think through old problems in new ways. 
+
+Hopefully this blog reaches some of those stakeholders including education policy analysts, institutional researchers, enrollment managers, students, faculty, staff, donors, or sports fans. If none of those folks are interested, then maybe I'll enjoy writing it for the total pleasure of changing words into ones and zeros.
+
+#### **Podcasting was fun. So why not try this?**
+
+I like to try new things and have fun. When my friend and former colleague, Thom Golden proposed a podcast about enrollment management and data science, I figured it would be a fun way to test out the technology and achieve the lifelong dream of getting paid to drink beer. Three years, 36 episodes, and 20,000 downloads later, [The Weightlist](https://www.capturehighered.com/category/weightlist/) jumped the shark with an ill-advised episode about p-values. 
+
+Even though that experiment was done, there was still a universe of topics that would be fun to discuss. So...here we are.
+
+#### **Work is my dinner, side projects are my dessert**
+
+There is a scene in the not-as-good-as-Good-Will-Hunting film, [_Finding Forrester_]( https://www.imdb.com/title/tt0181536/), where a Pulitzer Prize-winning author played by Sean Connery sits down with a copy of the _National Enquirer_. His young protégé comments on the trashiness of the publication. Connery's character responds "I read The Times for dinner. This is my dessert."
+
+The comparison isn't perfect, but I've always enjoyed having projects that are related to my professional work, but different enough to allow me to learn new statistical methods or test out different R packages. 
+
+For the unitiated, R is an open-source statistical programming language that is utilized by many data scientsts. It provides an endless wellspring of interesting packages, including a robust suite of tools called [Blogdown](https://bookdown.org/yihui/blogdown/) which uses R Markdown to create easily-deployable static pages. I am absolutely stoked to get this deployed and begin playing around in the sandbox.
+
+#### **Other duties as assigned**
+
+This classic phrase is listed in every higher ed job description. It basically is a catch all for all of the things that the employer hasn't thought of. It also becomes something of an in-joke among admissions and student affairs professionals who find themselves standing in the freezing cold, pointing families to an orientation parking garage and thinking, "I went to grad school for this?"
+
+This blog and site, will eventually have more stuff. Look out for portfolio items, tutorials, code-throughs, and other data sciencey stock photos.
+
+Thanks for coming along for the ride.
