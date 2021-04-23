@@ -16,7 +16,7 @@ baseurl = "https://bradweiner.info/"
 copyright = "&copy; {year}, Brad Weiner"
 
 #this is for bradweiner.info
-#googleAnalytics = "UA-192926380-1"
+googleAnalytics = "UA-192926380-3"
 
 #this is for bradweiner.netlify.app
 #googleAnalytics = "UA-192926380-2"
