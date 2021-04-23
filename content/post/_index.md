@@ -1,7 +1,7 @@
 ---
-header:
+header: 
   caption: ""
   image: ""
-title: Posts
+title: Blog Posts
 view: 2
 ---
