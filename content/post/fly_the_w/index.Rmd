@@ -297,7 +297,7 @@ The winning answer is to avoid this situation in the first place.
 
 Which brings me to the next lesson learned...
 
-### Lesson #6: Have a Punch List
+### Lesson #5: Have a Punch List
 
 There will always be bugs and new features and grand ambitions. To keep it all straight, be sure to keep a punch list. As you may recall, the first two items on mine are:
 
@@ -325,7 +325,7 @@ Again, this bot is by me, for me, and totally irrelevant to the great wide world
 
 Which...brings me to the final lesson
 
-### Lesson #7: Listen to Feedback
+### Lesson #6: Listen to Feedback
 
 Sometimes people _are_ requesting improvements. These can come in the form of GitHub issues, failure fire drills,^[A friend at an unnamed company told me that when these happen someone comes to your desk and stands over you until its fixed and passes unit tests.] feature requests, or just plain old product feedback.
 
@@ -355,8 +355,6 @@ It also gave me the idea to give this bot it's own hashtag "#FlyTheWBot" which m
 * Every data scientist should test out AWS or other cloud environments on a low-stakes, low-cost project. This project should simulate what a real world setup that _could_ be higher stakes.
 * Mistakes will happen. Enjoy them and learn from them.
 * Give thanks to everyone who helped along the way :point_down:
-
-
 
 ### Acknowledgements
 
