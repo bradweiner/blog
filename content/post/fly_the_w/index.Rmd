@@ -1,0 +1,377 @@
+---
+title: "Lessons Learned from Building a Silly Twitter Bot"
+author: "brad"
+date: '2021-04-05'
+slug: lessons-learned-from-building-a-silly-twitter-bot
+categories:
+- r
+- python
+- aws
+tags:
+- datascience
+- sideprojects
+- cubs
+- dessert
+subtitle: 'I am not a data engineer, but I play one in this blog. Badly.'
+summary: ''
+authors: []
+lastmod: '2021-04-05T08:53:42-06:00'
+featured: yes
+image:
+  placement: 1
+  caption: Photo Credit Heather Maguire https://unsplash.com/photos/1nKs6Js_JxA
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+### Why Have Side Projects?
+
+Whenever I am asked the best ways to learn data science, I always
+encourage folks to find a problem to solve that is *interesting* and
+*unrelated to work*. In other words, a side project.
+
+The rationale for this advice is simple. Learning something new is
+hard. Therefore, you should tackle problems that bring as much joy while getting 
+you out of entangled email or late-night Slack boondoggles.
+
+### Building a Twitter Bot
+
+One my ongoing side projects (what I refer to as "dessert") is building
+and maintaining a Twitter bot that behaves like the famed
+["W" Flag](https://en.wikipedia.org/wiki/Cubs_Win_Flag) flown
+above the Wrigley Field scoreboard each time the Cubs win.
+
+Although this seems like a fairly lightweight data engineering task
+(and likely is for people who *already* know how), I wanted to gain some
+low-risk, low-cost experience putting a data pipeline into production.
+
+Three years later, I am still learning and optimizing. And it's still a fun, silly project
+that gives me just a little something else to root for beyond the team on the field.
+
+Here are some lessons I've learned a long the way.
+
+### Lesson \#1: Putting something into production is totally different than doing it locally
+
+For several years in a row, I produced Twitter Analytics during the
+Annual Meeting for the National Association for College Admissions
+Counseling (NACAC). [^1]
+
+[^1]: See, I managed to make this tangentially about higher ed
+
+This had the same basic process (API call, data pull, aggregation and posting),
+but it was a manual process requiring my sitting in front of my computer every night. Given the
+anticipation for these results [^2] it was on my list until it wasn't.
+
+[^2]: Anticipation is a bit generous. Admissions people are highly
+    competitive and the ranked list of "most frequent Tweeters" became a fairly
+    intense, in-conference version of USNWR
+
+With the Fly The W Bot, I wasn't committed to watching every game all
+season, and had no plans to manually run the script each time the final out was recorded.
+So, I created a production pipeline using Amazon Web Services (AWS).
+
+Initially, the stack was
+
+**An R script that:**
+
+  :white_check_mark: Pulls raw data from the MLB in-game API  
+  :white_check_mark: Determines the current state and score of the Cubs game  
+  :white_check_mark: Creates a data frame with the fields of interest (home score, away score, winning picther, losing pitcher, date, time, venue)  
+  :white_check_mark: Utilizes the `rtweet` package to post a Tweet IF the game is complete AND the Cubs won  
+  :white_check_mark: Logs a copy of the data frame along with a time stamp for logging/error checking purposes.
+
+**Running inside of:**
+
+  :white_check_mark: AWS EC2 t2.micro instance  
+  
+  EC2 stands for "elastic compute". Think of this as a computer in the cloud of varying sizes and configurations that you can build as you want and use when you want. Critically, you only pay for what you use. 
+  The micro is one of the smallest with a single core
+  and 1GB of ram. If you had a much larger job, you could buy time on a much larger machine and subsequently 
+  pay a much larger cost.
+  
+  :white_check_mark: [RStudio AMI](https://www.louisaslett.com/RStudio_AMI/) (Ubuntu 18.04-LTS-64bit, RStudio 1.2.1335, R 3.6.0). 
+  
+  AMI stands for Amazon Machine Image. Rather than building a full remote computer and installing the necessary   software, people have done the work for you already. In my case, it comes pre-installed with R and RStudio   
+  running on a Linux machine. 
+  
+  :white_check_mark: 20GB attached EBS volume - the minimum requirement for the AMI. 
+  
+  EBS is Elastic Block Store. This is a flexible mounted hard drive that is attached to the machine above. 
+  
+**Running on a cronjob that:**
+
+  :white_check_mark: Re-runs the script every 2 minutes  
+  :white_check_mark: Between April and October (the span of the baseball season)
+
+This basic setup will continually re-run the same R script, repeatedly, every two minutes, during the baseball season as long as the EC2 instance is on. 
+
+### Lesson #2: Optimize everything, including costs
+
+After getting the basic setup deployed and working, the next question was how to I minimize the costs?
+
+To begin, the entire setup is relatively inexpensive. 
+
+Given the very small storage requirements, the EBS pay-for-what-you-use model runs about seven cents per day. Assuming no giant jumps in data storage, this cost is essentially fixed. 
+
+The real variability comes from the EC2 compute time, which, on this t2.micro machine, runs at \$0.0116 cents per hour. Back-of-the-napkin, the whole shebang would cost around \$0.35 cents per day, or \$70 for the full season ^[The assumption here is  that Cubs will play deep into October] if it ran continuously.
+
+For context, a full MLB.tv digital package costs $129. That's to watch every single game from _almost_ every team, all season long. Also, it's possible that a fully headless/serverless mechanism could potentially run for free.   
+
+Ultimately, the rationale for cost optimization is to replicate choices that exist in the actual business world. Even though I might personally value this bot to the tune of \$70 annually, a future CEO or CTO might have a different take when compute and storage costs put real strains on budgets or organizational ambitions. If this fictional CTO were to ask me to shave 10% of our AWS budget, I wanted to experience this scenario at the penny level rather than the  "burn rate" level.
+
+To minimize costs I sought to programmatically narrow the window of time when the EC2 instance was running with the following steps
+
+1. Limit the server run time to a reasonable window when Cubs games would end
+2. Turn off instance on days when the Cubs didn't play
+3. Turn off instance when Cubs had already won for the day
+4. Turn off the instance when the Cubs had already lost for the day
+
+Step #1 isn't a fully straightforward process. During the upcoming season, Cubs games start at 28 different times across four American time zones. Furthermore, the un-timed nature of baseball leads to highly variant durations. 
+
+In 2019, the shortest Cubs game wrapped up in a tidy 145 minutes while the longest ran 336. The average duration was 191 minutes with a whopping standard deviation of 27.4 minutes! Think about that the next time you sit down to watch baseball. Random variation will determine how you spend nearly a half hour of your life! 162 times per year. 
+
+Naturally, someone might ask why not just spin up the server every morning at, say, 2am when it is highly likely that the preceding day's game has concluded? This would be standardized and very cheap.
+
+The reason is that I wanted to bot to represent a close to real-time version of the actual flag, which is already flying by the time Wrigleyville denizens crack open a post-game Old Style ^[Baseball fans will note that the W Flag only flies afer home games. With rare exceptions, opposing teams not been convinced to celebrate Cubs wins in _their_ home ballparks].
+
+**This required creating:**
+
+  :white_check_mark: Lambda function to start the server  
+  :white_check_mark: Lambda function to stop the server  
+  :white_check_mark: Cloudwatch event triggers to fire the function at 5pm CST every day, and one to fire the stop function at 3am CST every day. 
+  
+This range, reduces server spend time from 24 hours to a maximum of 10. It is possible that this range will delay Tweets from quickly-played, early starting games, but is unlikely to shut down before the completion a late night, extra inning barnburner.
+  
+  :white_check_mark: Logic in the R script that overrides the Cloudwatch end time if the Cubs win or lose before the Cloudwatch stop trigger.
+  
+The real server wasteage occurs when the instance runs past the completion of a game. Having an outside boundary is acceptable to ensure that the bot is awake when the game end but it is clearly sub-optimal assume ten hours of run time when the average game ends after three. To alleviate this, I created some logic to shut down the server once a game has wrapped up. 
+
+### Lesson #3: Eventually, you should learn *some* Python
+
+As a longtime R enthusiast I have found that every tool required for my professional 
+and personal work so far, has been totally do-able within the R ecosystem. I gotten deeper 
+into Python over the last few years, mostly as a way to be a better-than-average manager of
+multi-lingual data science teams ^[R v. Python debaters, please don't @ me].
+
+But, when it comes to data engineering tasks in AWS, R is simply not supported.
+Indeed much of the AWS ecosystem has a Pythonic version including some key features
+in Lambda (serverless functions) and Glue (scaled ETL). 
+
+Additionally, basic connections to the AWS ecosystem with Python's [boto3](https://aws.amazon.com/sdk-for-python/)
+are well supported and documented, while R implementations of similar tools are less so. In fact, several of the walk throughs and blogs about boto3 in R utilize the super-sweet `reticulate` package which effectively enables Python libraries and methods from within R. 
+
+While I am a mega-supporter of the R ecosystem and believe strongly in the tools and the community, there is no doubt that the world's [most popular](https://www.wired.com/story/python-language-more-popular-than-ever/) programming language is widely used within and beyond the data science and analytics communities. If you think that your analytic work will eventually get handed off to data engineers working in the cloud, I recommend getting to a point where you can comfortably ski greens in Python. 
+
+<!-- ### Lesson #4: Dates and Times Are Hard -->
+
+<!-- Anyone who has done data work recognizes the punishing cognitive load of figuring out  -->
+<!-- dates and times. There are _so_ many ways in which dates and times add complexity. For an excellent summary check out [this](https://towardsdatascience.com/dates-times-calendars-the-universal-source-of-data-science-trauma-92a887fdedd1) piece describing dates and times as a "Universal Source of Trauma". -->
+
+<!-- For the Fly the W bot, there are several points which required some thinking on dates and times.  -->
+
+<!-- 1. AWS Lamdba fires triggers UTC which is the Coordinated Universal Time measured in Greenwich. It is the artist formerly known as GMT and broadly speaking, the way that the entire world sets its clocks. If the EC2 instance was turning on at the right time in Greenwich, the bot would miss the mark. Therefore, my earlier indication of the bot running from 5pm CST to 3am CST is programmatically, the bot running from 22:00:00 UTC to 08:00:00 UTC. -->
+
+<!-- 2. Fortunately, spinning up a tiny Linux box in the sky^[The cloud isn't really in the sky. It's a server farm in an undisclosed location], you can pick which time zone you want it to run in. Unfortunately, setting the clock in the OS isn't super intuitive. I blatantly copy-pasted the code from this [tutorial](https://linuxize.com/post/how-to-set-or-change-timezone-on-ubuntu-20-04/) in order to set the time to "America/Chicago" (UTC -5:00). The purpose was to reduce my need for subtraction and to make sure that the internal cronjob was built on Chicago time (where the Cubs play _most_ of their games) rather than in Greenwich or somewhere else.  -->
+
+<!-- 3. Finally, it was important pull the game from the day before in cases when the first pitch and the final out stradled midnight. Initially, the bot missed several East Coast games due to this error, which was fixed by the following R code: -->
+
+
+<!-- `td <- ifelse(hour(now(tzone = "US/Central")) > 0 & hour(now(tzone = "US/Central")) < 5,  -->
+<!--              today(tzone ="US/Central") -1, today(tzone ="US/Central"))` -->
+
+
+### Lesson #4: Mistakes are made. Things will break.
+
+Every project, whether it's data related or not, has a limitless number of ways where it could go sideways. Some of these start as unknown unknowns, but some are legitimate oopsies, that exist fully between the keyboard and chair.
+
+In the spirit, of [Data Mishaps Night](https://datamishapsnight.com/) and to help aspiring data folks alleviate some imposter syndrome, I believe it is best practice to candidly and transparently expose a few blunders.
+
+#### That time Fly the W Became Hal 
+
+Since I planned to publish this to my own Twitter account, the biggest concern was that the bot would (somehow) take on a life of its own and spam my existing followers.
+
+Fortunately, Twitter has a few safeguards in place.  
+
+:white_check_mark: Rate limits preventing API abuse or SPAM  
+:white_check_mark: A technical prohibition on posting the _exact same_ tweet twice.
+
+Additionally, I created my own limit:
+
+:white_check_mark: Before posting a Tweet, the game_id must not be present in a log file called "already_tweeted_[year]".
+
+Now, sit back and let me tell you about the time, on Opening Day no less, I sneaked past three safeguards to create a Twitter-bot-gone-awry.
+
+:no_entry_sign: Rate limits preventing API abuse or SPAM
+
+This one was the easiest. FTWB only posts a single Tweet per game, well below the limits that could get me flagged for SPAM, or unduly influencing an election.
+
+:no_entry_sign: A technical prohibition on posting the _exact same_ tweet twice.
+
+Initially, the plan was for the Fly The W Bot to tweet a single "W" each time the Cubs won. Fortunately, for Cubs fans, the team puts on a winning performance _at least_ twice per season. As a result, the stripped down "W" Tweet was not possible
+
+To get around this, I added the date and time of the game in question in order to make the Tweet text unique. An early, ugly version of a Fly the W Bot Tweet looked like this:
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1177825272793632769')
+```
+</center>
+
+With this approach, the Tweets were unique, thereby clearing the bar to get posted but without risking any more than a single Tweet per day.
+
+Then, in a legitimate exercise of unintended consequences, I figured I could make the Tweet prettier by adding a W Flag Graphic. Thanks to the incredible `rtweet` package by Michael W. Kearney, programmatically adding media to a post was super easy.  An example of the prettified Tweet looks like this:
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1309693687136423936')
+```
+</center>
+
+Looks good right?
+
+Well, what you don't see is that each time the bot Tweets, it is uploading copy of the media image to Twitter, and pointing the reference to a _unique_ link. In short, I had unwittingly created a way to have multiple _unique_ tweets per day.
+
+At least, I had the custom test to make sure that the unique game id had not already been tweeted. Right? 
+
+:no_entry_sign: Before posting a Tweet, the game_id must not be present in a log file called "already_tweeted_[year]".
+
+Wrong. 
+
+Since this error^[Baseball pun intended] occured on Opening Day, 2020, I foolishly hadn't updated the code from the earlier year. So it was pointed to `already_tweeted_2019` rather than `already_tweeted_2020`. Since the unique game ids are coded based on date, there was no universe where an id in the 2020 season would have already been posted in 2019.
+
+So, what happened? 
+
+On Opening Day (which was in July due to the COVID-19 pandemic) the Cubs beat the Brewers 3-0. When the final out was recorded, the bot^[Let's be real here, the bot was written by a human, namely me] created a unique Tweet with a unique image URL that would never be duplicated. And, since the unique game ID for 2020 wasn't found in the _previous_ year's set of IDs, it just kept on Tweeting. And Tweeting. And Tweeting. 
+
+Every two minutes until I was graciously notified that the script had lost its mind and that I would be subsequently muted. Here is the offending Tweet.
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1286839347686322176')
+```
+</center>
+
+Followed by the public _mea culpa_:
+
+<center>
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1286855321965588480')
+```
+</center>
+
+The main lesson learned here was that even under circumstances when there are technical guardrails in place, humans still err. 
+
+I don't want to confuse this small-time, two-bit, silly Twitter bot with something meaningful or valuable. But imagine a business process that delvers real value to your users. It stands to reason that you could save some time, resources, embarrassment, or catastrophe by implementing code reviews, unit tests, a sandbox development environment, and some official way to move from dev to prod.
+
+#### Football in the Groin
+
+Beyond the previous coding blunder that caused a small, but real error in a production environment, there are other blunders that are worth sharing for their pure comedic gold.
+
+As an initial pass, this was built entirely using the AWS UI in a web browser. This involved logging in to AWS, starting the instance and hot coding any updates into the live environment. 
+
+Anyone who does this work professionally would highlight, in no uncertain terms, that this is dumb. 
+
+It was doubly idiotic given the process that automatically shuts down the server when Cubs weren't playing or when the game is over. And it was triply ridiculous if _that_ script ran automatically, every two minutes during the baseball season. I am sure that some of the tech-savvy folks are seeing the punchline here, but just to spell it out:
+
+I created a paradoxical product where firing up the system initiated a process that shut down the system. 
+
+Fixing it involved a race against the two minute clock and felt a bit like this:
+
+![](https://media.giphy.com/media/3o6Mb5DeTZ6OOwskOQ/giphy.gif)
+
+There were numerous ways out of this mess, some clunkier than others:
+
+:white_check_mark: Copy instance, start from scratch  
+:white_check_mark: Use the Command Line Interface (CLI) to remotely change the cronjob  
+:white_check_mark: Wait until the end of baseball season when the cronjob expires  
+:white_check_mark: Remove the instance, get away from my computer, go on a walk.
+
+The winning answer is to avoid this situation in the first place.
+
+:trophy: Create a version controlled script in GitHub  
+:trophy: Continuously deploy the newest version of the "software" by pulling directly from GitHub
+
+Which brings me to the next lesson learned...
+
+### Lesson #6: Have a Punch List
+
+There will always be bugs and new features and grand ambitions. To keep it all straight, be sure to keep a punch list. As you may recall, the first two items on mine are:
+
+:trophy: Create a version controlled script in GitHub  
+:trophy: Continuously deploy the newest version of the "software" by pulling directly from GitHub
+
+But there are others
+
+:exclamation: Write logic to account for double headers  
+:exclamation: Create logic to shut down system if the game is suspended for weather  
+:exclamation: Create a variety of unique Tweets that can be randomly selected  
+:exclamation: Add an inning score line  
+:exclamation: Create modular functions allowing for similar processes with other teams  
+:exclamation: Create an alert if there is a reasonable chance that a no-hitter is being thrown  
+:exclamation: Re-build the entire setup on a Raspberry Pi that I can leave on until it catches on fire
+:exclamation: Re-build the entire setup using Python. For fun. 
+:exclamation: Reduce storage by automatically deleting logs  
+:exclamation: Prettify code. Delete unhelpful comments  
+:exclamation: Convert all code to functions and into a documented R package
+:exclamation: Try building a complete AMI so I can tear down the full thing in the off-season
+
+It's fun and interesting to constantly re-imagine your own project. But it's also important to remember that once you build something, you own and maintain it until it is sunsetted or removed from the product line.
+
+Again, this bot is by me, for me, and totally irrelevant to the great wide world. But the same may not be true for your production code. Always be on the lookout for improvements, even if nobody is requesting them.
+
+Which...brings me to the final lesson
+
+### Lesson #7: Listen to Feedback
+
+Sometimes people _are_ requesting improvements. These can come in the form of GitHub issues, failure fire drills,^[A friend at an unnamed company told me that when these happen someone comes to your desk and stands over you until its fixed and passes unit tests.] feature requests, or just plain old product feedback.
+
+Since FTWB goes out publicly on my personal Twitter [feed](https://twitter.com/brad_weiner) people who may not be interested in the Cubs have made suggestions and also pointed out when things appear to be going awry.
+
+It's important to listen and make sure that your product (even silly ones like this) are meeting your end-user's needs.
+
+A few pieces of feedback I have gotten:
+
+1. The Tweet itself needs to be more informative. At first it was just a "W" with a date which lacked information richness relative to 280 character limit in Twitter. Over time, I added scores, the venue, and the winning and losing pitchers with more to come on the punch list.
+
+2. Initially, I saw this as a project that would be of interest to the R community and therefore FTWB went out with the hashtag `#rstats`. 
+
+As it turned out, there are _other_ bots that automatically Retweet anything containing "#rstats". Each time the Cubs won, everyone following a totally different bot was hit up with the "W". 
+
+It was recursive, and annoying. Someone reached out and politely applauded the project but indicated it wasn't helpful to have an army of self-perpetuating bots Retweeting one another. This was great feedback which promoted me to remove the #rstats hashtag for good. 
+
+It also gave me the idea to give this bot it's own hashtag "#FlyTheWBot" which makes it discoverable for people who care, yet mute-able for people want to ignore these Tweets while still following my account.
+
+3. On opening day 2020, when everything went awry, it wasn't long before someone pointed that out to me. Again, this is a low-stakes, silly Twitter bot, but in the real world, this would be the "Your system is broken cancel your weekend" kind of notification. This "feedback" is the kind that can't go ignored, but it is a reminder that end users or clients are often the first to notice when something is down. Have a process in place to quickly discover outages and a rapid response plan to correct them. In my case, had it gone on much longer, I am pretty sure Twitter would have shut down the account.
+
+### TL;DR
+
+* Side projects are an awesome way to learn new tech skills
+* Fun side projects make it easy to learn these skills and not have them feel like "work"
+* Putting a data pipeline into production is complicated, but well worth the effort.
+* Every data scientist should test out AWS or other cloud environments on a low-stakes, low-cost project. This project should simulate what a real world setup that _could_ be higher stakes.
+* Mistakes will happen. Enjoy them and learn from them.
+* Give thanks to everyone who helped along the way :point_down:
+
+
+
+### Acknowledgements
+
+Others have made the case for silly or whimsical side projects and I want to point to the excellent
+[rstudioconf::2020
+talk](https://www.rstudio.com/resources/rstudioconf-2020/learning-r-with-humorous-side-projects/)
+and [slides](http://www.ryantimpe.com/rstudio2020.pdf) by [Ryan
+Timpe](http://www.ryantimpe.com/) on learning R with humorous side
+projects.
+
+I am convinced that no Blogdown post actually gets out into the world without substantial Googling and assistance from
+the tremendous team at RStudio. [Alison Hill](https://alison.rbind.io/) deserves special praise for her concise code tutorials and seemingly endless generosity responding to issues and on various boards.  I am currently running Hugo 0.74.3 and Blogdown version 0.19, so something tells me I will be asking my own questions in the very near future.
+
+Thanks to everyone who follows me on Twitter. Very few of you probably like or care about the Chicago Cubs, but you deal with my nonsense anyway. 
+
+And, of course, thanks to all the Cubs fans out there. May there be many W flags in your future.
+
+
