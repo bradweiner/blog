@@ -52,7 +52,7 @@ low-risk, low-cost experience putting a data pipeline into production.
 Three years later, I am still learning and optimizing. And it's still a fun, silly project
 that gives me just a little something else to root for beyond the team on the field.
 
-Here are some lessons I've learned a long the way.
+Here are some lessons I've learned along the way.
 
 ### Lesson \#1: Putting something into production is totally different than doing it locally
 
@@ -80,7 +80,7 @@ Initially, the stack was
 
   :white_check_mark: Pulls raw data from the MLB in-game API  
   :white_check_mark: Determines the current state and score of the Cubs game  
-  :white_check_mark: Creates a data frame with the fields of interest (home score, away score, winning picther, losing pitcher, date, time, venue)  
+  :white_check_mark: Creates a data frame with the fields of interest (home score, away score, winning pitcher, losing pitcher, date, time, venue)  
   :white_check_mark: Utilizes the `rtweet` package to post a Tweet IF the game is complete AND the Cubs won  
   :white_check_mark: Logs a copy of the data frame along with a time stamp for logging/error checking purposes.
 
@@ -123,7 +123,7 @@ For context, a full MLB.tv digital package costs $129. That's to watch every sin
 
 Ultimately, the rationale for cost optimization is to replicate choices that exist in the actual business world. Even though I might personally value this bot to the tune of \$70 annually, a future CEO or CTO might have a different take when compute and storage costs put real strains on budgets or organizational ambitions. If this fictional CTO were to ask me to shave 10% of our AWS budget, I wanted to experience this scenario at the penny level rather than the  "burn rate" level.
 
-To minimize costs I sought to programmatically narrow the window of time when the EC2 instance was running with the following steps
+To minimize costs, I sought to programmatically narrow the window of time when the EC2 instance was running with the following steps
 
 1. Limit the server run time to a reasonable window when Cubs games would end
 2. Turn off instance on days when the Cubs didn't play
@@ -136,7 +136,7 @@ In 2019, the shortest Cubs game wrapped up in a tidy 145 minutes while the longe
 
 Naturally, someone might ask why not just spin up the server every morning at, say, 2am when it is highly likely that the preceding day's game has concluded? This would be standardized and very cheap.
 
-The reason is that I wanted to bot to represent a close to real-time version of the actual flag, which is already flying by the time Wrigleyville denizens crack open a post-game Old Style ^[Baseball fans will note that the W Flag only flies afer home games. With rare exceptions, opposing teams not been convinced to celebrate Cubs wins in _their_ home ballparks].
+The reason is that I wanted to bot to represent a close to real-time version of the actual flag, which is already flying by the time Wrigleyville denizens crack open a post-game Old Style ^[Baseball fans will note that the W Flag only flies after home games. With rare exceptions, opposing teams not been convinced to celebrate Cubs wins in _their_ home ballparks].
 
 **This required creating:**
 
@@ -144,21 +144,21 @@ The reason is that I wanted to bot to represent a close to real-time version of 
   :white_check_mark: Lambda function to stop the server  
   :white_check_mark: Cloudwatch event triggers to fire the function at 5pm CST every day, and one to fire the stop function at 3am CST every day. 
   
-This range, reduces server spend time from 24 hours to a maximum of 10. It is possible that this range will delay Tweets from quickly-played, early starting games, but is unlikely to shut down before the completion a late night, extra inning barnburner.
+This range reduces server spend time from 24 hours to a maximum of 10. It is possible that this range will delay Tweets from quickly played, early starting games, but is unlikely to shut down before the completion a late night, extra inning barnburner.
   
   :white_check_mark: Logic in the R script that overrides the Cloudwatch end time if the Cubs win or lose before the Cloudwatch stop trigger.
   
-The real server wasteage occurs when the instance runs past the completion of a game. Having an outside boundary is acceptable to ensure that the bot is awake when the game end but it is clearly sub-optimal assume ten hours of run time when the average game ends after three. To alleviate this, I created some logic to shut down the server once a game has wrapped up. 
+The real server wastage occurs when the instance runs past the completion of a game. Having an outside boundary is acceptable to ensure that the bot is awake when the game end but it is clearly sub-optimal assume ten hours of run time when the average game ends after three. To alleviate this, I created some logic to shut down the server once a game has wrapped up. 
 
 ### Lesson #3: Eventually, you should learn *some* Python
 
 As a longtime R enthusiast I have found that every tool required for my professional 
-and personal work so far, has been totally do-able within the R ecosystem. I gotten deeper 
+and personal work so far, has been totally do-able within the R ecosystem. I have gotten deeper 
 into Python over the last few years, mostly as a way to be a better-than-average manager of
 multi-lingual data science teams ^[R v. Python debaters, please don't @ me].
 
 But, when it comes to data engineering tasks in AWS, R is simply not supported.
-Indeed much of the AWS ecosystem has a Pythonic version including some key features
+Indeed, much of the AWS ecosystem has a Pythonic version including some key features
 in Lambda (serverless functions) and Glue (scaled ETL). 
 
 Additionally, basic connections to the AWS ecosystem with Python's [boto3](https://aws.amazon.com/sdk-for-python/)
@@ -233,7 +233,7 @@ blogdown::shortcode('tweet', '1309693687136423936')
 
 Looks good right?
 
-Well, what you don't see is that each time the bot Tweets, it is uploading copy of the media image to Twitter, and pointing the reference to a _unique_ link. In short, I had unwittingly created a way to have multiple _unique_ tweets per day.
+Well, what you don't see is that each time the bot Tweets, it is uploading copy of the media image to Twitter and pointing to a _unique_ link. In short, I had unwittingly created a way to have multiple _unique_ tweets per day.
 
 At least, I had the custom test to make sure that the unique game id had not already been tweeted. Right? 
 
@@ -241,7 +241,7 @@ At least, I had the custom test to make sure that the unique game id had not alr
 
 Wrong. 
 
-Since this error^[Baseball pun intended] occured on Opening Day, 2020, I foolishly hadn't updated the code from the earlier year. So it was pointed to `already_tweeted_2019` rather than `already_tweeted_2020`. Since the unique game ids are coded based on date, there was no universe where an id in the 2020 season would have already been posted in 2019.
+Since this error^[Baseball pun intended] occurred on Opening Day, 2020, I foolishly hadn't updated the code from the earlier year. It was pointed to `already_tweeted_2019` rather than `already_tweeted_2020`. Since the unique game ids are coded based on date, there was no universe where an id in the 2020 season would have already been posted in 2019.
 
 So, what happened? 
 
@@ -277,9 +277,9 @@ Anyone who does this work professionally would highlight, in no uncertain terms,
 
 It was doubly idiotic given the process that automatically shuts down the server when Cubs weren't playing or when the game is over. And it was triply ridiculous if _that_ script ran automatically, every two minutes during the baseball season. I am sure that some of the tech-savvy folks are seeing the punchline here, but just to spell it out:
 
-I created a paradoxical product where firing up the system initiated a process that shut down the system. 
+I created a paradoxical product in which firing up the system initiated a process that shut down the system. 
 
-Fixing it involved a race against the two minute clock and felt a bit like this:
+Fixing it involved a race against the two-minute clock and felt a bit like this:
 
 ![](https://media.giphy.com/media/3o6Mb5DeTZ6OOwskOQ/giphy.gif)
 
@@ -292,7 +292,7 @@ There were numerous ways out of this mess, some clunkier than others:
 
 The winning answer is to avoid this situation in the first place.
 
-:trophy: Create a version controlled script in GitHub  
+:trophy: Create a version-controlled script in GitHub  
 :trophy: Continuously deploy the newest version of the "software" by pulling directly from GitHub
 
 Which brings me to the next lesson learned...
@@ -301,7 +301,7 @@ Which brings me to the next lesson learned...
 
 There will always be bugs and new features and grand ambitions. To keep it all straight, be sure to keep a punch list. As you may recall, the first two items on mine are:
 
-:trophy: Create a version controlled script in GitHub  
+:trophy: Create a version-controlled script in GitHub  
 :trophy: Continuously deploy the newest version of the "software" by pulling directly from GitHub
 
 But there are others
@@ -313,10 +313,10 @@ But there are others
 :exclamation: Create modular functions allowing for similar processes with other teams  
 :exclamation: Create an alert if there is a reasonable chance that a no-hitter is being thrown  
 :exclamation: Re-build the entire setup on a Raspberry Pi that I can leave on until it catches on fire
-:exclamation: Re-build the entire setup using Python. For fun. 
+:exclamation: Re-build the entire setup using Python. For fun.  
 :exclamation: Reduce storage by automatically deleting logs  
 :exclamation: Prettify code. Delete unhelpful comments  
-:exclamation: Convert all code to functions and into a documented R package
+:exclamation: Convert all code to functions and into a documented R package  
 :exclamation: Try building a complete AMI so I can tear down the full thing in the off-season
 
 It's fun and interesting to constantly re-imagine your own project. But it's also important to remember that once you build something, you own and maintain it until it is sunsetted or removed from the product line.
@@ -331,7 +331,7 @@ Sometimes people _are_ requesting improvements. These can come in the form of Gi
 
 Since FTWB goes out publicly on my personal Twitter [feed](https://twitter.com/brad_weiner) people who may not be interested in the Cubs have made suggestions and also pointed out when things appear to be going awry.
 
-It's important to listen and make sure that your product (even silly ones like this) are meeting your end-user's needs.
+It's important to listen and make sure that your products (even silly ones like this) are meeting your end-user's needs.
 
 A few pieces of feedback I have gotten:
 
@@ -341,9 +341,9 @@ A few pieces of feedback I have gotten:
 
 As it turned out, there are _other_ bots that automatically Retweet anything containing "#rstats". Each time the Cubs won, everyone following a totally different bot was hit up with the "W". 
 
-It was recursive, and annoying. Someone reached out and politely applauded the project but indicated it wasn't helpful to have an army of self-perpetuating bots Retweeting one another. This was great feedback which promoted me to remove the #rstats hashtag for good. 
+It was recursive, and annoying. Someone reached out and politely applauded the project but indicated it wasn't helpful to have an army of self-perpetuating bots Retweeting one another. This was great feedback which prompted me to remove the `#rstats` hashtag for good. 
 
-It also gave me the idea to give this bot it's own hashtag "#FlyTheWBot" which makes it discoverable for people who care, yet mute-able for people want to ignore these Tweets while still following my account.
+It also gave me the idea to give this bot its own hashtag `#FlyTheWBot` which makes it discoverable for people who care, yet mute-able for people want to ignore these Tweets while still following my account.
 
 3. On opening day 2020, when everything went awry, it wasn't long before someone pointed that out to me. Again, this is a low-stakes, silly Twitter bot, but in the real world, this would be the "Your system is broken cancel your weekend" kind of notification. This "feedback" is the kind that can't go ignored, but it is a reminder that end users or clients are often the first to notice when something is down. Have a process in place to quickly discover outages and a rapid response plan to correct them. In my case, had it gone on much longer, I am pretty sure Twitter would have shut down the account.
 
@@ -352,7 +352,7 @@ It also gave me the idea to give this bot it's own hashtag "#FlyTheWBot" which m
 * Side projects are an awesome way to learn new tech skills
 * Fun side projects make it easy to learn these skills and not have them feel like "work"
 * Putting a data pipeline into production is complicated, but well worth the effort.
-* Every data scientist should test out AWS or other cloud environments on a low-stakes, low-cost project. This project should simulate what a real world setup that _could_ be higher stakes.
+* Every data scientist should test out AWS or other cloud environments on a low-stakes, low-cost project. This project should simulate what a real-world setup that _could_ be higher stakes.
 * Mistakes will happen. Enjoy them and learn from them.
 * Give thanks to everyone who helped along the way :point_down:
 
