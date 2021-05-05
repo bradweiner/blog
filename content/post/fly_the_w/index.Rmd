@@ -313,7 +313,7 @@ But there are others
 :exclamation: Add an inning score line  
 :exclamation: Create modular functions allowing for similar processes with other teams  
 :exclamation: Create an alert if there is a reasonable chance that a no-hitter is being thrown  
-:exclamation: Re-build the entire setup on a Raspberry Pi that I can leave on until it catches on fire
+:exclamation: Re-build the entire setup on a Raspberry Pi that I can leave on until it catches on fire  
 :exclamation: Re-build the entire setup using Python. For fun.  
 :exclamation: Reduce storage by automatically deleting logs  
 :exclamation: Prettify code. Delete unhelpful comments  
