@@ -1,0 +1,44 @@
+---
+title: Data Science as a Flashlight 
+authors: [brad]
+event: NAE Virtual Workshop on Sharing Exemplary Admissions Practices That Promote Diversity in Engineering
+event_url: https://events.eposterboards.com/e/nae-admissions-diversity/register
+location: Virtual
+abstract: 'Colleges and universities can and should use Data Science to allocate our scarce resources. How we use them is the important part.' 
+summary: 'How Predictive Models Can Guide the Way to Student Success'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2021-05-26T15:15:00Z"
+#date_end: "2019-09-12T12:00:00Z"
+all_day: false
+
+categories:
+  - talk
+tags:
+  - predictivemodels
+  - datascience
+  - cuboulder
+  - nae
+lastmod: '2021-05-26'
+featured: no
+image:
+  caption: '[Photo by Martin Sattler on Unsplash](https://unsplash.com/photos/mBz6QjRZKvc)'
+  focal_point: ''
+  preview_only: no
+projects: []
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: https://bradweiner.info/files/nae_presentation.pdf
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/bradweiner/nae
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/brad_weiner
+---
