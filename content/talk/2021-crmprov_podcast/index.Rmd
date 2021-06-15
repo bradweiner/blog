@@ -2,7 +2,7 @@
 title: The Role of Data Science in Higher Ed and What You Can Do at Your Institution
 author: brad
 date: '2021-06-15'
-slug: the-role-of-data-science-in-higher-ed-and-what-you-can-do-at-your-institution
+slug: crmprov-podcast
 categories:
   - talk
   - podcast
