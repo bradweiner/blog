@@ -22,7 +22,7 @@ interests:
 - Institutional Advancement
 name: Brad Weiner
 organizations:
-- name: "Director of Data Science, University of Colorado Boulder"
+- name: "Interim Chief Data Officer, University of Colorado Boulder"
   url: "https://www.colorado.edu/"
 role: ""
 social:
@@ -42,6 +42,6 @@ superuser: true
 user_groups:
 ---
 
-Brad Weiner is the Director of Data Science at The University of Colorado Boulder. He lives in Erie, CO.
+Brad Weiner is the Interim Chief Data Officer at The University of Colorado Boulder. He lives in Erie, CO.
 
 
