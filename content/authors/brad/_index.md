@@ -18,8 +18,10 @@ interests:
 - Data Science + Education Policy
 - Open Source Data Science in R/Python
 - Data Science Leadership
+- Data Governance in Higher Education
 - Enrollment Management
 - Institutional Advancement
+- University Finance
 name: Brad Weiner
 organizations:
 - name: "Interim Chief Data Officer, University of Colorado Boulder"
@@ -38,10 +40,17 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/bradweinerprofile/
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0003-0070-4385
 superuser: true
 user_groups:
 ---
 
-Brad Weiner is the Interim Chief Data Officer at The University of Colorado Boulder. He lives in Erie, CO.
+Brad Weiner is the Interim Chief Data Officer at The University of Colorado Boulder.  
+
+He lives in Erie, CO.  
+
+Perspectives and ideas on this blog are my own and do not represent current or past employers.
 
 

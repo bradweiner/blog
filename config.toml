@@ -112,3 +112,10 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
     icon = "linkedin"
     icon_pack = "fa"
     link = "//linkedin.com/in/bradweinerprofile/"
+    
+  [[params.social]]
+    icon = "orcid"
+    icon_pack = "ai"
+    link = "https://orcid.org/0000-0003-0070-4385"
+    
+  
