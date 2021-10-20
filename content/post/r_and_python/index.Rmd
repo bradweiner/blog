@@ -1,0 +1,97 @@
+---
+title: 'R and Python: & ! |'
+author: brad
+date: '2021-10-19'
+slug: r-and-python-no-longer-and-or-statement
+categories:
+  - R
+  - python
+  - datascience
+tags: []
+subtitle: 'Solving this debate once and for all'
+summary: 'Learn one, learn both. They do different things well'
+authors: []
+lastmod: '2021-10-19T12:12:38-06:00'
+featured: no
+image:
+  placement: 1
+  caption: Photo Credit https://www.javatpoint.com/r-vs-python
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+### Introduction
+
+As more people lean into open-source data science/analytics tools for our work, I know there will be some questions over whether or to pick R or Python. Also, we’ve already had this discussion numerous times, so why not put ideas down on paper and make it easier the next time.
+
+First, both are awesome for various reasons and knowing some of both adds lots of value. Still, it isn’t totally reasonable that folks can be multi-lingual, especially as new programmers.
+
+Second, people should be able to pick the best toolkit to do the work. As long as it’s reproducible and the code and process are visible, then you do you.
+
+Below are opinions with which people will disagree. Indeed, there is a whole blog-cottage industry on this very topic. Most of it is fairly arcane and frankly, kinda dumb. But here are some basic thoughts. Please note everything below refers to data science applications and toolkits and not some object oriented adventure of building a multi-player video game.
+
+Pretty much any method or idea you can find in one language, has an implementation in the other. It might not be as built out or accepted or widely used, but it’s pretty hard to find cases where one language is just totally missing something you would want or need.
+
+If something can be done “that way in the other language” it makes sense to just use the original implementation. Keras was written for Python. ggplot was written for R. Just because you can access the Keras API from inside RStudio doesn’t mean it’s the best way to go.
+
+###  Startup Costs
+
+For this, the rapid download of R and RStudio is a clear win. Already during my time on campus, I’ve helped a few people quickly stand up R environments and get to doing some basic testing.
+
+The variety of IDEs for Python, the different versions of Python, the different environments and even the different types of environmental maintenance systems within Python (conda/pip) make it a much heavier lift to understand, especially for new users. I have struggled with this for a while, but this blog, from a well-known data scientist and hard-core Python user, says it all.
+
+http://veekaybee.github.io/2018/03/12/installing-python-is-hard/
+
+###  Learning
+
+Both have lots of resources and options for learning. Since both are open source, there are many code-throughs and github repos to help you learn. It seems as though a lot of Data Science bootcamps, programs, and online courses are moving to Python. So long term, it has a slight advantage. I’d also point to the excellent tutorials from Google in their free Colab environment.
+
+The kicker is that a lot of the Python instruction initially focuses on computer science fundamentals and operations rather than “showing them the cake”. This is, undoubtedly, a richer educational experience, but slower than just opening data, and getting right to work. For newer users, the overall documentation and community aspect of R (especially from RStudio and the Tidyverse) make it attractive. 
+
+### Data Cleaning/Munging/EDA/Visualization
+
+The Tidyverse was designed to take crazy data from various sources, munge it, put it into a tabluar, tidy format, and do exploratory data analysis right out of the box. They have spent a lot of time thinking about these problems and have an opinionated view with very easily understood verbs (filter, select, slice, group_by, arrange). Although Pandas does a lot of this well (and let’s be real, similarly), there are still one-two hops (like boolean case selection) that make it just a bit trickier. I’d also suggest that the visualization implementation (at least matplotlib) is a bigger lift.
+
+### Machine Learning
+
+I used to think this was a clear win for Python. The ease of scikit pipelines and processes are well established and effective. Furthermore, the fact that deep learning libraries like TensorFlow and Keras are Python implementations shows that knowing Python will be a great step for super-duper advanced analytics. It’s also important to note that cloud based ML implementations (like AWS Sagemaker) run in Python.
+
+Until recently, this section didn't even mention R, however, the R [Tidymodels](https://www.tidymodels.org/) ecosystem has advanced rapidly and has its own significant advantages 
+
+### Data Engineering
+
+Again, Python for the win. I am not in any way suggesting that R can't be used for large scale production DS work, it can. Still, many of the tools in AWS have a Python implementation without a commensurate R version. So, if you want a job to run in Glue or Lambda or if you want to spin up instances using their CLI, Python will provide many more options. Also, since Python is more widely used as a programming language, it’s likely that Python will enable workflows for production-quality, reproducible, cloud based data science.  
+
+ 
+### IDE
+
+RStudio is super awesome. I have even heard frustrated chatter that a private company (although it’s a B Corp) has had too much influence on an open source language. Try all you want with VSCode, PyCharm, Spyder, Notebooks or whatever else, RStudio does it all (including running Python code FWIW).
+
+### Reproducible Reporting and Analysis
+
+The R Markdown ecosystem is absolutely phenomenal and, to my knowledge, there isn’t a super great comparison in Python. You can easily punt you full code/writeup into books, papers, theses, CVs, blogs (including this one) and other static websites. I can’t recommend these tools enough, especially since they create a stable, useful archive or work outputs, without having to go in and figure out which version of a process or Notebook the data live in.
+
+### The Labor Market
+
+This one is a bit tougher to gauge. Overall, I think that familiarity with R or Python will make one attractive for data science or analytic jobs especially compared to expensive proprietary tools (Stata, SAS, SPSS). All signs point to the fact that Python is the now the world's most popular programming language, but for data science work, R is also widely supported. I would argue that Python is a slightly better bet for the great wide world, particularly if your counterparts are software engineers or non-DS technologists. R has a slight edge in academic circles and IR shops. This is anecdotal based on what I’ve seen, which naturally is biased and limited.
+
+### Recommendation
+
+Given all of this, here is my thinking:
+
+IF you are new to coding and are just wanting to get started right away on an analytic project, I’d recommend spinning up R. If you are wanting to build something that will ultimately land in production or requires more advanced analytics or predictive modeling, go with Python. 
+
+If you are planning to input data and output some data artifact, R might be a faster path. However, if you are planning to build a full product, especially a cloud-based product Python is where it’s at.
+
+If your colleagues are people who want to ingest something like a spreadsheet, another analyst, or someone who needs aggregated data, I’d recommend R. If your colleagues are data or software engineers, then Python.
+
+Finally, I’d figure out ways to leverage the best of both. This doesn't have to be an either/or proposition. For example, I’ve seen success in the past with doing the importing and cleaning and exporting of an analytic data set in R, then using the ML tools in Python to build out and store models.
+
+### Conclusion
+
+Learn one. Learn the other. Learn both. Don’t spend too much time in this relatively arcane argument. Comments and suggestions welcome below.
+
+### Acknowledgements
+
+This piece was initially posted in a team Confluence board. It was largely written by me, but has some influence and edits from other individuals. 
