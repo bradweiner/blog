@@ -40,9 +40,9 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/bradweinerprofile/
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/0000-0003-0070-4385
+# - icon: orcid
+#   icon_pack: ai
+#   link: https://orcid.org/0000-0003-0070-4385
 superuser: true
 user_groups:
 ---
