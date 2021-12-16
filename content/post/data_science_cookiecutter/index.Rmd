@@ -1,0 +1,117 @@
+---
+title: '''Tis the Season for Standardized Data Science Project Structures'
+author: "brad"
+date: '2021-12-16'
+slug: tis-the-season-for-standardized-data-science-folder-structures
+categories:
+- datascience
+- R
+- python
+- organization
+tags:
+- cuboulder
+- datascience
+- R
+- python
+subtitle: Save time and effort with standardized project templates
+summary: As a holiday present from us to you, please enjoy this cookie cutter project
+  template
+authors: []
+lastmod: '2021-12-16T08:22:06-07:00'
+featured: no
+image:
+  placement: 1
+  caption: Photo Credit Valentina Dominguez https://unsplash.com/photos/syJhMS-Jxxg
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+### Don't Bury the Lede
+
+As a holiday present, we decided to make the [CU Boulder Office of Data Analytics'](https://www.colorado.edu/oda/) cookie cutter project template publicly available.  
+
+The link is [here](https://github.com/UCBoulder/oda_ds_project_template)
+
+### Why You Need A Standarized Structure
+
+When working on a data science team, it is nice to rapidly spin up the infrastructure and backbone of a project so you can get from research question to final product in as little time as possible.
+
+It is also important to stay organized. Having a standardized project structure and basic workflow allows anyone on the team (or beyond) to understand the project scope and to reproduce the entire analysis from the headwaters to the delta.
+
+### Structure and Description
+
+:open_file_folder: project name    <-----  Top level folder name  
+:page_facing_up: .gitignore   <-----  Keep data, secrets, and other files out of version control  
+:page_facing_up: README.md    <-----  Documentation for your Github repo   
+:open_file_folder: code   <-----  All analytic code goes under here   
+  :open_file_folder: SQL   <-----  Raw SQL files used to pull data  
+  :open_file_folder: python  
+    :page_facing_up: 1_load.py   <-----  Load data, libraries, packages, macros, methods    
+    :page_facing_up: 2_clean.py   <-----  Cleaning to turn a raw data set into an analytic data set  
+    :page_facing_up: 3_model.py   <-----  Model training pipeline  
+    :page_facing_up: 4_test.py    <-----  Model test on out of sample data  
+    :page_facing_up: 5_validate.py   <-----  Model validation on additional out of sample data  
+    :page_facing_up: Pipfile    <-----  Package dependencies necessary for virtual environment in Python  
+    :page_facing_up: Pipfile.lock    <-----  Lock file with  environmental variables tied to this project's environment  
+    :open_file_folder: great_expectations    <-----  Data validation code from Great Expectations goes here  
+        :open_file_folder: expectations    <-----  Specific expectations and validation requirements  
+          :page_facing_up: great_expectations.yml     
+          :open_file_folder: uncommitted  
+          :open_file_folder: validations  
+  :open_file_folder: r    <-----  Same setup as above, but for R code  
+    :page_facing_up: 1_load.r  
+    :page_facing_up: 2_clean.r  
+    :page_facing_up: 3_model.r  
+    :page_facing_up: 4_test.r  
+    :page_facing_up: 5_validate.r  
+:open_file_folder: data    <-----  Top level for all data. Be sure to add to your .gitignore  
+  :open_file_folder: final_analytic_files   <-----  Files are fully ready for ML models or distributed out as "sources of truth"  
+  :open_file_folder: raw   <-----  Raw data. Put them here, then leave them alone. Forever.  
+  :open_file_folder: transformed   <-----  Saved data files after cleaning and transforms, but before ready for full deployment  
+:open_file_folder: notes    <-----  Notes and comments and basic documentation 
+  :page_facing_up: project_template.docx   <-----  A standardized template that describes the project scope, research questions, existing research, earlier efforts, data sources, deadlines, and deliverables  
+:open_file_folder: outputs    <-----  Top level file for the various project outputs and artifacts  
+  :open_file_folder: raw_data   <-----  If your output is a raw data file, put it here. Don't forget to add to .gitignore  
+  :open_file_folder: reports    <-----  Markdown, PDF, HTML and similar reports go here including the code that produces them  
+  :open_file_folder: viz_files   <-----  Saved versions of stable viz files for use in other reports, PowerPoints or emailing  
+:open_file_folder: saved_models   <-----  Top level folder for fully specified models  
+  :open_file_folder: final      <-----  Final models that are ready for deployment or production  
+  :open_file_folder: in_progress   <-----  Models that are still being specified or tuned
+
+### Rules and Workflow
+
+The structure above only gets you so far if you don't have some guardrails and a good workflow. Here are a few of those suggested use cases.
+
+1. **Once the raw data goes in, it never gets touched.** Think of the "raw" folder as a lockbox. You can add to it, you can delete files that aren't part of the piepline, but never, ever change the underlying data. All of that happens downstream. Read from the `raw` folder and then updated, cleaned, or otherwise transformed data gets saved into the `transformed` or `final_analytic_files` folders.  
+
+2. **Make sure that `/data/*` is added to your `.gitignore`.** This is a crucial piece to make sure that none of your underlying data ends up being tracked in your version control or worse, pushed up to Github. If that is your later intention you can always undo this, but it's better to start on the safe side. 
+
+3. **Be careful with secrets.** There are lots of ways to store them, but remember to put any files with secrets into `.gitignore` as well.
+
+4. **Remember to use the 1,2,3,4,5 workflow.** There aren't hard rules around this, but breaking it up into different files not only helps you stay organized, but it helps with reproducibility later. You go on vacation or win the lottery, someone else in your organization can likely follow the sequentially numbereed cookie crumbs to understand your workflow. 
+
+5. **Use relative paths.** If you get good at referencing files up and down the project directory structure, then (in theory) the entire project could be pulled from Github and run all the way through. If you hard code in your specific machine's directory structure, all is lost.  
+
+6. **Find a convenient and easy way to share raw data files.** If you're using this structure and workflow, you'll need a secure, place to store the data. I recommend an approved file share tool that your organization uses. This way, if someone else wants to reproduce your work, all they have to do is pull the repo, copy all of the `raw` data into the correct folder, and everything downstream should work just fine.
+
+7. **Be creative.** This structure is intended to provide a useful workflow and to help your team have standardized places to put things. But different groups might have different use cases or different needs. Have fun, try new things. Clone the repo and make your own updates. 
+
+8. **Learn to love your readme.** Populating your readme is a great way to make sure that your stakeholders are aligned and that you are answering the correct research questions from the start. 
+
+9. **Train everyone**. This system works best when everyone is using it. By writing up some documentation and goals, and by making sure that every project, no matter how small, the cookiecutter, a readme, and a repo, your whole data science enterprise will scale more easily. Best of all, this provides a launching pad for actual, data science collaboration. Even if a single person owns the project, others can go in and understand where the necessary components live.
+
+### Acknowledgements
+
+We all stand on shoulders. This type of workflow is widely used in data science.  thanking the original creator is probably impossible. 
+
+I was first introduced to this type of workflow by my friend and colleague [Peter Barwis](https://github.com/peterbarwis). When I came to CU Boulder in 2020, one of my first asks was to get a standardized project structure in place. 
+
+This particular [repo](https://github.com/UCBoulder/oda_ds_project_template) has been almost totally built and maintained by [Ulises Dario Guzman Sol](https://github.com/ulgu3559), who is widely known on campus as Uli. Uli took the basic premise and earlier [work](https://drivendata.github.io/cookiecutter-data-science/) and spun it up using `{cookiecutter}`. He has continued to expand on the project by adding workflows for data validation `{great expectations}` and Pythonic virtual environments.
+
+### Bury the Lede
+
+To check out the repository or clone it for yourself. Follow the URL below
+
+[https://github.com/UCBoulder/oda_ds_project_template](https://github.com/UCBoulder/oda_ds_project_template)
+

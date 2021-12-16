@@ -1,0 +1,108 @@
+---
+title: '''Tis the Season for Standardized Data Science Project Structures'
+author: "brad"
+date: '2021-12-16'
+slug: tis-the-season-for-standardized-data-science-folder-structures
+categories:
+- datascience
+- R
+- python
+- organization
+tags:
+- cuboulder
+- datascience
+- R
+- python
+subtitle: Save time and effort with standardized project templates
+summary: As a holiday present from us to you, please enjoy this cookie cutter project
+  template
+authors: []
+lastmod: '2021-12-16T08:22:06-07:00'
+featured: no
+image:
+  placement: 1
+  caption: Photo Credit Valentina Dominguez https://unsplash.com/photos/syJhMS-Jxxg
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="dont-bury-the-lede" class="section level3">
+<h3>Don’t Bury the Lede</h3>
+<p>As a holiday present, we decided to make the <a href="https://www.colorado.edu/oda/">CU Boulder Office of Data Analytics’</a> cookie cutter project template publicly available.</p>
+<p>The link is <a href="https://github.com/UCBoulder/oda_ds_project_template">here</a></p>
+</div>
+<div id="why-you-need-a-standarized-structure" class="section level3">
+<h3>Why You Need A Standarized Structure</h3>
+<p>When working on a data science team, it is nice to rapidly spin up the infrastructure and backbone of a project so you can get from research question to final product in as little time as possible.</p>
+<p>It is also important to stay organized. Having a standardized project structure and basic workflow allows anyone on the team (or beyond) to understand the project scope and to reproduce the entire analysis from the headwaters to the delta.</p>
+</div>
+<div id="structure-and-description" class="section level3">
+<h3>Structure and Description</h3>
+<p>:open_file_folder: project name &lt;—– Top level folder name<br />
+:page_facing_up: .gitignore &lt;—– Keep data, secrets, and other files out of version control<br />
+:page_facing_up: README.md &lt;—– Documentation for your Github repo<br />
+:open_file_folder: code &lt;—– All analytic code goes under here<br />
+  :open_file_folder: SQL &lt;—– Raw SQL files used to pull data<br />
+  :open_file_folder: python<br />
+    :page_facing_up: 1_load.py &lt;—– Load data, libraries, packages, macros, methods<br />
+    :page_facing_up: 2_clean.py &lt;—– Cleaning to turn a raw data set into an analytic data set<br />
+    :page_facing_up: 3_model.py &lt;—– Model training pipeline<br />
+    :page_facing_up: 4_test.py &lt;—– Model test on out of sample data<br />
+    :page_facing_up: 5_validate.py &lt;—– Model validation on additional out of sample data<br />
+    :page_facing_up: Pipfile &lt;—– Package dependencies necessary for virtual environment in Python<br />
+    :page_facing_up: Pipfile.lock &lt;—– Lock file with environmental variables tied to this project’s environment<br />
+    :open_file_folder: great_expectations &lt;—– Data validation code from Great Expectations goes here<br />
+        :open_file_folder: expectations &lt;—– Specific expectations and validation requirements<br />
+          :page_facing_up: great_expectations.yml<br />
+          :open_file_folder: uncommitted<br />
+          :open_file_folder: validations<br />
+  :open_file_folder: r &lt;—– Same setup as above, but for R code<br />
+    :page_facing_up: 1_load.r<br />
+    :page_facing_up: 2_clean.r<br />
+    :page_facing_up: 3_model.r<br />
+    :page_facing_up: 4_test.r<br />
+    :page_facing_up: 5_validate.r<br />
+:open_file_folder: data &lt;—– Top level for all data. Be sure to add to your .gitignore<br />
+  :open_file_folder: final_analytic_files &lt;—– Files are fully ready for ML models or distributed out as “sources of truth”<br />
+  :open_file_folder: raw &lt;—– Raw data. Put them here, then leave them alone. Forever.<br />
+  :open_file_folder: transformed &lt;—– Saved data files after cleaning and transforms, but before ready for full deployment<br />
+:open_file_folder: notes &lt;—– Notes and comments and basic documentation
+  :page_facing_up: project_template.docx &lt;—– A standardized template that describes the project scope, research questions, existing research, earlier efforts, data sources, deadlines, and deliverables<br />
+:open_file_folder: outputs &lt;—– Top level file for the various project outputs and artifacts<br />
+  :open_file_folder: raw_data &lt;—– If your output is a raw data file, put it here. Don’t forget to add to .gitignore<br />
+  :open_file_folder: reports &lt;—– Markdown, PDF, HTML and similar reports go here including the code that produces them<br />
+  :open_file_folder: viz_files &lt;—– Saved versions of stable viz files for use in other reports, PowerPoints or emailing<br />
+:open_file_folder: saved_models &lt;—– Top level folder for fully specified models<br />
+  :open_file_folder: final &lt;—– Final models that are ready for deployment or production<br />
+  :open_file_folder: in_progress &lt;—– Models that are still being specified or tuned</p>
+</div>
+<div id="rules-and-workflow" class="section level3">
+<h3>Rules and Workflow</h3>
+<p>The structure above only gets you so far if you don’t have some guardrails and a good workflow. Here are a few of those suggested use cases.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Once the raw data goes in, it never gets touched.</strong> Think of the “raw” folder as a lockbox. You can add to it, you can delete files that aren’t part of the piepline, but never, ever change the underlying data. All of that happens downstream. Read from the <code>raw</code> folder and then updated, cleaned, or otherwise transformed data gets saved into the <code>transformed</code> or <code>final_analytic_files</code> folders.</p></li>
+<li><p><strong>Make sure that <code>/data/*</code> is added to your <code>.gitignore</code>.</strong> This is a crucial piece to make sure that none of your underlying data ends up being tracked in your version control or worse, pushed up to Github. If that is your later intention you can always undo this, but it’s better to start on the safe side.</p></li>
+<li><p><strong>Be careful with secrets.</strong> There are lots of ways to store them, but remember to put any files with secrets into <code>.gitignore</code> as well.</p></li>
+<li><p><strong>Remember to use the 1,2,3,4,5 workflow.</strong> There aren’t hard rules around this, but breaking it up into different files not only helps you stay organized, but it helps with reproducibility later. You go on vacation or win the lottery, someone else in your organization can likely follow the sequentially numbereed cookie crumbs to understand your workflow.</p></li>
+<li><p><strong>Use relative paths.</strong> If you get good at referencing files up and down the project directory structure, then (in theory) the entire project could be pulled from Github and run all the way through. If you hard code in your specific machine’s directory structure, all is lost.</p></li>
+<li><p><strong>Find a convenient and easy way to share raw data files.</strong> If you’re using this structure and workflow, you’ll need a secure, place to store the data. I recommend an approved file share tool that your organization uses. This way, if someone else wants to reproduce your work, all they have to do is pull the repo, copy all of the <code>raw</code> data into the correct folder, and everything downstream should work just fine.</p></li>
+<li><p><strong>Be creative.</strong> This structure is intended to provide a useful workflow and to help your team have standardized places to put things. But different groups might have different use cases or different needs. Have fun, try new things. Clone the repo and make your own updates.</p></li>
+<li><p><strong>Learn to love your readme.</strong> Populating your readme is a great way to make sure that your stakeholders are aligned and that you are answering the correct research questions from the start.</p></li>
+<li><p><strong>Train everyone</strong>. This system works best when everyone is using it. By writing up some documentation and goals, and by making sure that every project, no matter how small, the cookiecutter, a readme, and a repo, your whole data science enterprise will scale more easily. Best of all, this provides a launching pad for actual, data science collaboration. Even if a single person owns the project, others can go in and understand where the necessary components live.</p></li>
+</ol>
+</div>
+<div id="acknowledgements" class="section level3">
+<h3>Acknowledgements</h3>
+<p>We all stand on shoulders. This type of workflow is widely used in data science. thanking the original creator is probably impossible.</p>
+<p>I was first introduced to this type of workflow by my friend and colleague <a href="https://github.com/peterbarwis">Peter Barwis</a>. When I came to CU Boulder in 2020, one of my first asks was to get a standardized project structure in place.</p>
+<p>This particular <a href="https://github.com/UCBoulder/oda_ds_project_template">repo</a> has been almost totally built and maintained by <a href="https://github.com/ulgu3559">Ulises Dario Guzman Sol</a>, who is widely known on campus as Uli. Uli took the basic premise and earlier <a href="https://drivendata.github.io/cookiecutter-data-science/">work</a> and spun it up using <code>{cookiecutter}</code>. He has continued to expand on the project by adding workflows for data validation <code>{great expectations}</code> and Pythonic virtual environments.</p>
+</div>
+<div id="bury-the-lede" class="section level3">
+<h3>Bury the Lede</h3>
+<p>To check out the repository or clone it for yourself. Follow the URL below</p>
+<p><a href="https://github.com/UCBoulder/oda_ds_project_template">https://github.com/UCBoulder/oda_ds_project_template</a></p>
+</div>
