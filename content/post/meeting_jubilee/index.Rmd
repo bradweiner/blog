@@ -1,0 +1,109 @@
+---
+title: 'We Should Have Meeting Jubilee'
+author: brad
+date: '2022-01-02'
+slug: meeting-jubilee
+categories:
+  - ideas
+  - organizational effectiveness
+  - meetings
+tags:
+  - meetings
+  - organizations
+  - leadership
+  - covid19
+subtitle: "Tired of Meetings? Let's Delete Them All and Start Over"
+summary: 'Back in the day, kings used to wipe away all debt in a single Jubilee. We should do that with Zoom meetings'
+authors: []
+lastmod: '2022-01-02T14:15:19-07:00'
+featured: no
+image:
+  placement: 1
+  caption: Photo Credit https://unsplash.com/photos/IBWIy0tZ2Vw
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+### Introduction
+
+I have yet to meet the person that simply loves meetings. After nearly two years of staring at our friends and colleagues over Zoom, a few things are clear:
+
+1. Remote and hybrid work aren't going away. So this will be our version of "work" for the foreseeable future.
+
+2. Zoom and commensurate technologies are bad for your [physical health](https://www.acsm.org/blog-detail/acsm-blog/2021/01/08/zoom-meetings-bad-for-your-health), [psychological health](https://www.nationalgeographic.com/science/article/coronavirus-zoom-fatigue-is-taxing-the-brain-here-is-why-that-happens), and [productivity](https://fortune.com/2021/02/08/zoom-fatigue-fewer-meetings-data-analytics-leadership-advice/).
+
+3. If we're going to make room for healthy workplaces with sustainable professional growth and reasonable hours, something is going to have to give.
+
+### Meetings Aren't Necessarily Bad
+
+Meetings have always had a place in higher education. After all, we work in highly decentralized organizations with unclear and often conflicting goals (Birnbaum all the way). Much of our time is getting alignment and coordination.  
+
+"Committee work" is a classic version of the service to your institution or academic discipline that is required for faculty promotion and tenure. In other words, "meetings" are basically part of the job.
+
+And to be clear: meetings aren’t inherently bad. They do serve a critical communication function and are a great way to interact with new stakeholders with whom personal relationships matter. I personally started a new position during COVID-19 and have really appreciated "meet and greet" meetings which have allowed me to learn about the institution by talking to people rather than reading documentation.^[Spoiler Alert: There is no documentation].
+
+Still, meetings make it difficult to do the creative, often solitary analyses, visualizations, data pulls, survey design, management, and communications. More and more, that work is being done after hours or on the weekends. In my experience, this is leading to exhaustion and burnout.
+
+### Meetings as an Optimization Problem
+
+One issue with meetings is that they are too easy to spin up and too difficult to tear down. This is largely because people rarely take the time to calculate the costs and opportunity costs of meetings over other work.^[Although this [tool](https://hbr.org/2016/01/estimate-the-cost-of-a-meeting-with-this-calculator) can do that work for you] In fact, meetings have become the _default_ version of what we think of as work.
+
+For me, the _biggest_ problem with meetings is that they are so difficult to schedule. Since meeting scheduling is de-centralized and lacks broad coordination, they are scattered in a sub-optimal way across the day and week.
+
+How often do you try to find a time to meet, only to recognize that you have entered into an unsolvable [NP-hard](https://en.wikipedia.org/wiki/NP-hardness) space where no brute force algorithm can find an optimal solution in our existing space-time reality?^[I kid, I kid. In fact, this is almost certainly an NP-complete problem that is solvable with enough time and compute. According to a Netflix documentary, optimizing classroom space and time at Lakeside is exactly how Microsoft started.] 
+
+If we simply scheduled meetings in a coordinated way, we could become more efficient, and also have an easier time finding common meeting times when ad-hoc discussions are necessary and important. 
+
+### Proposed Solutions
+
+To get out of this problem, one could programmatically optimize meeting times. My guess is that the constraints (times, dates, availability, people involved, recurrence, picking kids up from school and so on) would make it extremely complex. Furthermore, any changes to those constraints could have ongoing downstream impacts across the entire network of meetings. 
+
+Instead, my proposal comes from a substantially less technical place: the Hebrew Bible. In the book of Leviticus, there is a suggestion that once every 50 years, a ram's horn is blown to signal the elimination of all debts. This concept is referred to as "Jubilee" or "Debt Jubilee".^[It is unclear from the historical record if any leaders ever truly implemented a debt jubilee, so the concept is real, but in practice it might not be.]
+
+A jubilee essentially wipes the slate clean allowing all of the entanglements to become gloriously disentangled. 
+
+Therefore, my proposal to create _Meeting_ Jubilee.
+
+### How it Might Work
+
+* Once per year, upon the return from the winter holiday break, the University Chancellor or President would signal the beginning of Meeting Jubilee. This would happen via ram's horn or email.
+
+* After this notice, different units would spend a bit of time planning for post Jubilee. 
+This would involve finding some common times when people prefer meetings and work, and documenting the key meetings that are actually part of the rhythm of the office. Agile standups, lunch breaks, Focus Fridays, and periodic all-in meetings would get written down, but not scheduled. 
+
+Then, _everyone_ would simultaneously wipe their entire calendars clean. In this moment, _everyone_ would regain a fully blank 40 hour work week while while simultaneously eliminating the rat's nest of meeting dependencies. 
+
+Next, there would be a brief party to enjoy those few moments of genuinely blank calendar bliss. Cake and ice cream would be made available along with small triangle sandwiches and perhaps plates of shrimp, budget permitting.^[The Caboni "Shrimp Theory" is alive and well!]
+
+Finally, everyone would be free to plug back in important meetings in a strategic and coordinated way. My recommendation:
+
+1. Create sets of work blocks and meeting blocks, perhaps alternating four-hour chunks on Monday through Thursday. This way, morning people and afternoon people would each have two days of solid head-down time, in which to accomplish deep work.  
+2. Fridays, would be left blank as "Focus Fridays" to give people a full day away from meetings, and have some space for longer, strategic meetings and confabs.
+
+### Outcomes
+
+#### More Effective Use of Time
+
+If meetings themselves aren't the problem, then the sub-optimal use of time and horrendous cognitigive burden of task switching certainly are. Even in higher ed, where coordination and collaboration are critical for getting things done, eventually we need to _also_ get things done. This would help our head-down, deep-thinking technologists accomplish this more easily.
+
+#### Most Likely, Fewer Meetings
+
+If meetings _are_ the problem (inasmuch as they fill up the workday and push head-down time to after-hours leading to burnout) then this would almost certainly reduce them. My recommendation, by nature, would add dedicated work blocks to the schedule so that people had time to actually think through hard problems without needing to task-switch between meetings and other work.  
+
+#### Better Meetings
+
+One of the problems with wall-to-wall meetings is that there is rarely time to prepare for the meetings thoughtfully, document discussions or decisions, or rapidly complete the determined action items. I am of the mindset that if we had fewer meetings and if they were spaced more carefully apart, we could spend thoughtful time _preparing_ for meetings and making sure that time spent together produced fruitful outcomes.
+
+#### It Would Be Fun
+
+We all know how meetings work. They grow like Kudzu across our calendars and ultimately swallow up those precious open meadows of head down time.  
+
+I am confident that with annual or even semi-annual meeting jubilees, we would learn to deliberately focus on the parts of work that create the greatest value, optimize our time across larger teams, and learn how meetings can be effectively leveraged to coordinate and collaborate. 
+
+But beyond all _that_ this exercise would simply be fun. It would be a routine event which would get folks together to think deliberately about our efforts, break bread, and celebrate the fact that teams, when coordinated and working together, can make a legitimate difference in your organization.
+
+### References
+
+[Wikipedia](https://en.wikipedia.org/wiki/Debt_jubilee)  
+[The Conversation](https://theconversation.com/the-debt-jubilee-an-old-testament-solution-to-a-modern-financial-crisis-11816)
