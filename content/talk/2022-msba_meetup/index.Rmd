@@ -1,0 +1,38 @@
+---
+title: Mirror, Flashlight, and Roadmap... How Institutions of Higher Education Use Data to Advance Student Outcomes
+authors: [brad]
+date: '2022-04-22T12:00:00Z'
+event: CU Boulder Leeds Business Analytics Group Meetup
+event_url: https://www.meetup.com/CU-Leeds-Business-Analytics/events/285301427
+location: Virtual
+abstract: 'College use data in a variety of ways to improve outcomes. In this talk, I will describe how institutions use data as a mirror, flashlight, and roadmap for continuous improvement. I will also make a pitch for you to join the journey'
+summary: 'How Institutions of Higher Education Use Data to Advance Student Outcomes'
+all_day: no
+categories: talk
+tags:
+- predictivemodels
+- datascience
+- cuboulder
+- leeds
+- msba
+lastmod: '2022-04-22'
+featured: no
+image:
+  caption: '[Photo by Rishabh Dharmani on Unsplash](https://unsplash.com/photos/IvfAs3Qk64M)'
+  focal_point: ''
+  preview_only: no
+projects: []
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: https://bradweiner.info/files/msba_meetup_talk.pdf
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/bradweiner/msba_meetup_talk
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/brad_weiner
+---
