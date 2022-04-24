@@ -1,14 +1,20 @@
 ---
 title: Mirror, Flashlight, & Roadmap... How Institutions of Higher Education Use Data to Advance Student Outcomes
 authors: [brad]
-date: '2022-04-22T12:00:00Z'
 event: CU Boulder Leeds Business Analytics Group Meetup
 event_url: https://www.meetup.com/CU-Leeds-Business-Analytics/events/285301427
 location: Virtual
-abstract: 'College use data in a variety of ways to improve outcomes. In this talk, I will describe how institutions use data as a mirror, flashlight, and roadmap for continuous improvement. I will also make a pitch for you to join the journey'
+abstract: 'College use data in a variety of ways to improve outcomes. In this talk, I will describe how institutions use data as a mirror, flashlight, and roadmap for continuous improvement. I will also make a pitch for you to join the journey' 
 summary: 'How Institutions of Higher Education Use Data to Advance Student Outcomes'
-all_day: no
-categories: talk
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2021-05-26T11:15:00Z"
+#date_end: "2019-09-12T12:00:00Z"
+all_day: false
+
+categories:
+- talk
 tags:
 - predictivemodels
 - datascience
@@ -22,6 +28,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+
 links:
 - icon: images
   icon_pack: fas
