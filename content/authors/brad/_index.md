@@ -53,4 +53,6 @@ He lives in Erie, CO.
 
 Perspectives and ideas on this site are my own and do not represent current or past employers.
 
+For best appearance and menu functionality, please view site on non-mobile browser. 
+
 
