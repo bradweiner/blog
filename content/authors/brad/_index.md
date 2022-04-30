@@ -55,4 +55,10 @@ Perspectives and ideas on this site are my own and do not represent current or p
 
 For best appearance and menu functionality, please view site on non-mobile browser. 
 
+If viewing on mobile, be sure to check out:
 
+* [Blog](https://bradweiner.info/post/)
+* [Presentations and Talks](https://bradweiner.info/talk)
+* [Higher Ed + Data Science Consulting](https://bradweiner.info/consulting/)
+* [Contact](https://bradweiner.info/#contact)
+* [CV/Resume](https://bradweiner.info/files/weiner_brad_resume.pdf)
