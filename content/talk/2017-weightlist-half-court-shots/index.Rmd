@@ -1,0 +1,37 @@
+---
+title: Episode 13. Enrollment Goals and Half-Court Shots. You Cannot Have It All
+authors: [brad]
+event: Podcast
+event_url: https://open.spotify.com/episode/01KYHyrmTiLzRFhYtphPkL
+location: Land of Horses and Bourbon, Louisville, KY
+abstract: 'Another Fall brings another set of enrollment goals to relentlessly pursue for many admissions teams across the nation. But how can data help delineate a stretch goal from a NBA half-court heave? In this episode of The Weightlist, Thom and Brad walk through a deep dive of five years of Integrated Postsecondary Education Data System (IPEDS) data to find out what happens when enrollment goals start canceling each other out. Want to nail your enrollment goals in May? This episode can help you set better goals in August.' 
+summary: 'Why Your Enrollment Goals Might Be In Conflict'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2017-08-01T09:45:00Z"
+#date_end: "2019-09-12T12:00:00Z"
+all_day: false
+
+categories:
+  - podcast
+tags:
+  - weightlist
+lastmod: '2017-08-01'
+featured: no
+image:
+  caption: '[](https://pbs.twimg.com/profile_images/793912913106968577/yhQ-L9yo_400x400.jpg)'
+  focal_point: ''
+  preview_only: no
+projects: []
+
+links:
+- icon: podcast
+  icon_pack: fas
+  name: Listen
+  url: https://open.spotify.com/episode/01KYHyrmTiLzRFhYtphPkL
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/brad_weiner
+---
