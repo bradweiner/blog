@@ -4,7 +4,7 @@ authors: [brad]
 event: CU Boulder Leeds Business Analytics Group Meetup
 event_url: https://www.meetup.com/CU-Leeds-Business-Analytics/events/285301427
 location: Virtual
-abstract: 'College use data in a variety of ways to improve outcomes. In this talk, I will describe how institutions use data as a mirror, flashlight, and roadmap for continuous improvement. I will also make a pitch for you to join the journey' 
+abstract: 'Colleges use data in a variety of ways to improve outcomes. In this talk, I will describe how institutions use data as a mirror, flashlight, and roadmap for continuous improvement. I will also make a pitch for you to join the journey.' 
 summary: 'How Institutions of Higher Education Use Data to Advance Student Outcomes'
 
 # Talk start and end times.
