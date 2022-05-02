@@ -1,6 +1,6 @@
 ---
 title: Episode 13. Enrollment Goals and Half-Court Shots. You Cannot Have It All
-authors: [brad]
+authors: [brad,Thom Golden]
 event: Podcast
 event_url: https://open.spotify.com/episode/1Sg1M4YJrno4qxO2N2iInJ?si=a4cc49a259634f76&nd=1
 location: Land of Horses and Bourbon, Louisville, KY
