@@ -1,0 +1,121 @@
+---
+title: "Nuggets of Wisdom from From Two Decades in Higher Ed"
+author: "brad"
+date: '2022-06-06'
+output:
+  html_document:
+    df_print: paged
+categories: 
+  - highered
+tags:
+  - highered
+  - bloviating
+subtitle: When I Think Back On All The Things I Learned After College
+summary: I have been ridiculously fortunate with leaders, mentors and colleagues.
+  Here is some advice I've accumulated along the way.
+authors: []
+lastmod: '2022-05-05T14:59:30-06:00'
+image:
+  placement: 1
+  caption: Photo Credit Laura Gilchrist https://unsplash.com/photos/hXQUhAscZhc
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options:
+  markdown:
+    wrap: 72
+slug: lessons-learned-after-two-decades-in-higher-ed
+---
+
+### Introductions
+
+Recently, it occurred to me that I got my first-time, full-time^[That's a little IPEDS joke for ya] job in higher education starting in May, 2002. If my math is correct, that means I've been working in higher education for twenty years.^[This blog was written in May, 2022]
+
+During that time, I've accumulated some useful lessons from from friends, colleagues, mentors, peers, experience, and often, from my own mistakes. In the spirit of an arbitrary anniversary with a round number and to potentially help others who are just now entering the space, I decided to share some of these lessons here. Please note that I have not officially attributed the quotes and insights below, but if you would like your name added (assuming you read this at all) please just say the word.
+
+#### "What are you trying to do here?"
+
+In my very first job, I made a request without communicating the end goal. A seasoned and well-respected colleague asked the question above. This lesson has been a constant reminder to ask good research questions, and make sure you have a well conceived plan before doing the work.
+
+#### "It's not what you say it's how you say it"
+
+When I was a young whippersnapper (unlike the old whippersnapper of today) I hadn't yet learned how to engage audiences or provide feedback without being...shall we say...impolite? A much loved colleague, with whom I am in contact to this day, provided this wisdom which has been a nearly constant reminder that kindness and productive feedback should be the baseline for collegiality, even if there are disagreements.
+
+#### "You should always be looking for jobs"
+
+In a moment of true generosity and transparency, my very first boss indicated that he would be interviewing for a position at another university. Rather than this being a negative lesson that someone is "leaving", this individual suggested that we should always be searching for opportunities. Seeing what else is out there provides the context for your current work situation and often, one of the best ways to get an outside perspective, new experiences, or higher pay. 
+
+#### "You need to learn to pull your own data"
+
+I had no idea who much data and technology would shape, and eventually become my career path. This very early request was not only an indicator that data is important to use in decision-making, but that learning to self-serve and figure it out is way better than just having someone fish for you.
+
+#### "Remember, we are not saving lives"
+
+As a graduate student, the fastest path between my apartment and my office (which was in the rec center for unknown reasons) was through the main floor of a children's hospital. Nearly every day I would see kids, some who were clearly ailing, enjoying small pleasures like a scoop of ice cream or a toy from the gift shop. On many of these days, I would later find myself debating some comparatively unimportant detail of a campus program. 
+
+As higher education professionals, we help students and faculty. We provide an economic ladder. We support path-breaking research and life-saving treatments. We contribute to the public good. We uplift communities. We elevate our institutions. And, we work hard to do it. Still, these kids were a reminder to keep a sense of perspective.^[COVID-19 changed this a bit, when some of the work we did on campus had _actual_ epidemiological and public safety implications.]
+
+#### "Say 'Yes'"
+
+People sometimes ask me how I got into data work in higher ed. The short answer is that I said yes to a task that nobody else wanted to do.
+
+The full story is that I was on a small team in an admissions office and we were asked to take on some additional responsibilities. The available tasks were athletics liaison, multicultural recruitment, and data reporting. As it turns out, the division of these labors happened while I was on the road, and data reporting was the "short straw".
+
+My manager said to me, "I need help with this, I think you'll do great. Say yes."
+
+And I did. As it turns out, I loved it. Although I no longer have to wait for 2 minute reports to refresh in a software program that has long since gone under, I would encourage anyone to say yes, even if it isn't your top choice or a known skill set.
+
+#### Care about the problem 
+
+After I finished grad school, I was figuratively thinking about taking my new Data Science chops to South Beach. It seemed like despite all my gained domain knowledge in higher ed, progress on policy changes could be slow and opportunities to use advanced analytics were scarce.
+
+So, I set up some informational interviews with some tech companies. After all, it seemed like there were endless opportunity to solve some agnostic machine learning (or 'data mining') problem regardless of how interesting the problem might have been.
+
+One of those calls was with a data science manager from a well-known electric car company run by an eclectic billionaire. The opportunity seemed awesome. It would be with a real DS team^[By this, I mean a team using open source tools, in a collaborative, version-controlled workflow, in a company that could rapidly generate value based on analytic findings]. It was in California. Options were available. It seemed awesome.
+
+But then I learned about the business problem.
+
+In short, I would be using historical IoT data to optimize warranty prices based on the expected lifespan of automatic windows and sunroofs. 
+
+To be clear: this is an awesome research question and a fun problem to solve. For somebody else. Ultimately, I recognized that solving problems or advancing the missions of education, public policy, philanthropy, or economic development, was going to motivate me in ways that...windows would not.
+
+#### "Check the place out..."
+
+Right around this time, I received a call from a longtime friend and colleague, with whom I had worked in a previous position. He had taken a position at an ed-tech startup in Louisville.^[LOO-UH-VULL in Kentucky which is different from the, not the LOO-ESS-VILLE in Colorado]. He was standing up a Data Science team and wanted me to get on a plane and see if I would be interested in working in startup-land. 
+
+So, I did. And it was one of the best decisions I ever made. Not only did I get to work on business problems I cared about (student recruitment, student success, advancement) and with communities I loved (enrollment managers and higher ed experts), but I got to dramatically expand my knowledge base from data engineers, full stack developers, business developers, account reps, and entrepreneurs. 
+
+If someone asks you to give something a shot or check the place out, I highly recommend saying yes. Get on the plane. If nothing else, some new friends and a good meal are waiting on the other side. 
+
+#### "Apologize rather than ask for permission"
+
+On campus, we are very used to slow, consensus-building efforts, where decisions are made by committee. This is how higher ed works, and it is a skill to align the people and the resources around a single goal.
+
+So, you can imagine my surprise when the CEO at my new job told me in our very first encounter that he _demanded_ his team apologize rather than ask for permission. No need to gather everyone in a room. No need to write a long report or proposal. If you had a good idea and it aligned with the goals and mission of the company, he wanted you to go for it. And by doing so, we created some very exciting products.^[I would also point out we created some clunkers along with a few projects that added little value beyond weirdness and fun.]
+
+This advice provided a key change in my cultural mindset that helped me succeed and fail faster. Best of all, when I returned to campus, I brought this ethos with me and have really tried to instill the same type of iterative processes that exist in startup land.  
+
+#### "I know things, and you know things. Let's learn from one another."
+
+It is common to come at a problem with the perspective that _your_ specific knowledge is somehow more important or relevant or hard earned. One of my colleagues used to start conversations with this chestnut and it was an amazing way to set the table that each of us had expertise in different areas. 
+
+I routinely bust out this very line to illustrate that we can all learn from one another, if we just take a few minutes to recognize that our combined expertise is going to be a whole lot more useful than two people debating over the "right" way.
+
+#### "Listen more, solution less"
+
+It is in my nature to try to solve problems because they are interesting and challenging and fun. As I have moved into leadership/management roles, and spent less and less time in the technical details, I have had to learn (and occasionally needing reminding) that teams sometimes just want to express frustration, to discuss that a problem _exists_, or just to be heard without having someone (else) jump into the solutioning fray. 
+
+#### "You can't decide when it rains"
+
+I always saw my career as a linear path with equidistant points leading to a single end goal. Of course, life doesn't work that way. This was a great piece of advice that helped me recognize that the detours, road closures, and altering waypoint distance are just part of the journey and are often, well beyond our control.
+
+#### Other wisdom as assigned
+
+This blog could probably go on forever, and indeed, a number of different pieces of wisdom were cut. But, maybe I'll keep updating this blog (and date stamping) as I learn new stuff over the coming years and decades.
+
+#### "I don't know what I don't know"
+
+I don't know way more than I do. So, take all of the above with whatever grains of whatever your preferred seasoning might be. Also, be sure to Tweet me [@brad_weiner](https://twitter.com/brad_weiner) to share the lessons that you've learned during your time in higher ed.
+
+
+
