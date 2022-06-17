@@ -1,0 +1,169 @@
+---
+title: Algorithms Are People Too
+author: brad
+date: '2021-09-29'
+slug: algorithms-are-people-too
+categories:
+  - highered
+tags:
+  - datascience
+  - emchat
+  - predictivemodels
+subtitle: "Without data, it's just guessing"
+summary: "Maligning algorithms misses the entire reason why they are utilized in the first place"
+authors: []
+lastmod: '2021-09-29T21:12:26-06:00'
+featured: no
+image:
+  placement: 1
+  caption: Photo Credit Andy Kelly https://unsplash.com/photos/0E_vhMVqL9g
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+### Introduction
+
+The use of predictive analytics (AKA algorithms) is something we in higher education should be thoughtful and deliberate about. Nevertheless, it is a bit misleading to simply point the finger at "algorithms" without addressing the legitimate resource constraints that necessitate their use. 
+
+### Let's talk about predictive models
+
+Predictive models use historical data to give an estimate of a future, unknown outcome. That outcome comes in the form of a probability, usually between 0 and 1. That's it. 
+
+Those estimates can then be used by organizations to efficiently allocate their scarce resources. This activity can be described as "optimization" but I also like to call it "not guessing".^[Yes, I am keely aware that Data Scientists and Operations Researchers will point to _true_ optimization in which every possible combination is tested until a mathematically optimal solution is derived. This is just a super fancy way of not guessing].
+
+### Let's talk about algorithms
+
+Algorithms are just sets of instructions that a computer or human or dog carries out in sequence. Adding milk and eggs to pancake mix is an algorithm. So is turning the ignition key, looking in the mirror, buckling one's seatbelt and pulling out of the driveway. 
+
+Know what else is an algorithm? The various forms of linear regression that rely on ordinary least squares (OLS). So too is that function in cell B:9 of your Excel spreadsheet. So, pretty much every social scientist and institutional researcher on your entire campus is using algorithms. 
+
+Algorithms (or algos if you're a Wall Street quant, Stanford graduate, or WeWork investor) have recently taken on a scary mien in large part due to the increased focus on "algorithmic bias". 
+
+To be clear, predictive models can and do reproduce whatever inputs they were trained on. 
+This is a real problem that is well known. But rather than fearing algorithms and banning their use, we should understand them, and be cautious about their implementation in domains where there is a high risk of creating anti-social or regressive outcomes. The higher the risk of a detrimental outcome, the less we should use predictive analytics. For example, predicting recidivism and making judicial recommendations seems too high risk for a mere probability. Deciding to send a less expensive admissions brochure, not so much.
+
+### How the Other 99.7% Lives
+
+So why use predictive models in higher education?
+
+If schools had unlimited resources and time and energy, they could theoretically provide full COA for all students in perpetuity. They could actively recruit every student to apply and eventually yield. They could get on airplanes and rent cars and enjoy hotel lobby breakfasts and visit every high school. They could send fancy brochures to every student across the globe. 
+
+If you hang out in The Beltway and can only imagine a universe with 20 institutions, each with small-country-GDP-sized endowments, this might seem plausible. But it's not. A vast swath of the American higher education marketplace are tuition dependent institutions where even small declines in enrollment can be catastrophic. 
+
+These institutions must utilize every possible resource to remain competitive. And yes, for those keeping score at home, that includes the use of data and predictive models.  
+
+### The Criticisms
+
+Here are some responses to common criticisms levied at using predictive models in higher education.
+
+#### Kinda Sorta Maybe
+
+First, the linkages between "algorithms" and the disparities in college attendance, degree attainment, student debt and other systemic ailments are poorly connected or lack empirical support. Anytime an argument hinges on "maybe", "may"^[especially in articles that use this word 36 times], "might" or "could" it is clear that there isn't the statistical or academic rigor to get beyond weasel words.
+
+I am not implying that this can't be theoretically or empirically accurate, but if someone is going to make assumptions of linkages, then that person should probably bring substantive data.^[Ironically, it is likely that statistical evidence of these links will be calculated by algorithms.]
+
+#### Enrollment Management Theory and Practice
+
+Concerns about algorithms and subsequent policy recommendations often make sense in theory, but are generally disconnected from the reality of how enrollment management actually operates. 
+
+For example, beltway types and policy makers have suggested that predictive models shouldn't be used in the actual _admissions_ decision, or in the awarding of need-based aid.
+
+Agreed. Students should get into a school based on their merit, not based on some statistical likelihood that they will enroll. But remember, this is a very "Varsity Blues" problem. ^[By this, I mean the disproportionate media and public attention given to a very small group of schools that don't come close to representing the real picture of American Higher Education. As a reminder, the [modal institution](https://bradweiner.info/post/modal-institution/) of higher education in America is something akin to the California Barber and Beauty College, not Yale.] Very, very few schools have deep enough pools or high enough yields to deny a bunch of students _and_ still meet enrollment goals. 
+
+Selective institutions that might consider deploying predictive models with the slim hope of reducing _admit rates_ still have to explain their decisions to external stakeholders, including their high school colleagues. If an algorithm is producing results on who to admit, those decisions are unlikely to make logical sense or line up in some step wise fashion across a greater-than-one high school applicant group.
+
+Let me explain:
+
+Given the maximizing behavior of highly-mobile students, it turns out that the higher a student's academic achievements are, the more choices that student has and the _less_ likely that student is to enroll at your institution. Conversely, the weaker the student is, the better your institution looks comparatively.^[On average. These are well known patterns, but not without exceptions.] 
+
+This is noteworthy across the comically over-ranked higher education landscape. To paraphrase a colleague who used to work in admissions at an unnamed Ivy League^[Yes, the _actual_ Ivy League which isn't anything more than a football conference] institution, "everyone has their Joneses."
+
+Since this behavior is common and persistent across time, one must assume that any model trained to predict the _enrollment_ outcome on non-admitted students, will probably find that the students (on average) with the highest likelihood to enroll are actually the _weakest_ academically. If a school went all-in with this strategy, it would be noticed immediately as the "top" students in the class would get denied or waitlisted, while the "bottom" students would get admitted. Try. Explaining. That.
+
+With regard to need-based aid, humans should make these decisions too.  Federal and state aid are highly-regulated subsidies intended to help low and middle income students afford college. When institutions are granted these dollars, they usually have a variety of reporting and compliance requirements including some grounding in the FAFSA. Not all states operate in this way (some offer block grants) but it is incumbent upon institutions to award these dollars to help lower income families pay for college, then report back on the results.
+
+#### Group Predictions vs. Individual Predictions
+
+The pundits who malign predictive models in higher education seem to have no problem with their use at the group level. After all, without an estimate of how many students are likely to enroll, every downstream projection (tuition, revenue, chemistry labs, faculty hires, residence hall rooms, PPE, isolation spaces, new student advisors, and everything else) would be impossible.
+
+But beyond that, there be dragons.  
+
+This is a strange position (at least to me) because it effectively removes any potential levers an institution might have to enroll a full class, meet their academic classes for academic majors or programs, or to achieve any other stated goals.
+
+Let me explain:
+
+Imagine an enrollment manager using an algorithm to obtain an estimated group prediction for the total class. For the sake of conversation, let's call this Enrollment Manager Hal. 
+
+Hal goes to his wonks and finds current forecast is 300 students with a bit of error. Hal also knows that without 320 students there could be layoffs, program closures, furloughs, or a common ailment among enrollment managers: job loss. 
+
+And remember, Hal is at a small, private, religious-founded liberal arts college somewhere between Michisconsin and Missibama. Yield and net tuition revenue have been declining for years. So too have enrollments from minoritized students, first-generational students, humanities majors, and students from West Arkanssouri. Unlike Gothic University and Pristine Lawn College, Hal doesn't have the ability to simply admit more students who will come from anywhere and pay anything for bumper sticker bragging rights. 
+
+At this point, Hal has essentially one lever left: discounting tuition. 
+
+If there were a policy explicitly banning data use in this instance, Hal could either produce the same intervention for everyone, say, discounting tuition 5% across the board,^[Just to be clear, this is a bad idea] initiating standardized yield efforts (phone calls, communication plans), or recognizing that doing the same thing for everyone is neither efficient nor feasible, perhaps nothing at all.
+
+At some point, Hal would go to the institution's board and say "I gave it my all, but unfortunately, we are done for the year. I'd love to enroll a full class, but I have no options left."
+
+This might sound extreme and melodramatic, but it's true. Without data informed-decisions, you are either applying the same tactic across the board, or you're just guessing.
+
+### Choose Your Own Optimization
+
+There is a common thread among anti-data folks that the algorithms run the show or that algorithms only have a single outcome. This is not true.
+
+The best part about optimization is that you, a real, living, breathing human being with emotions and ideas and morals and professional training and institutional goals get to set the terms. The computer just solves whatever problem you point it to.
+
+Commonly cited papers that use optimization strategies in enrollment management, indicate that schools have at least explored or implemented algorithmic optimization to increase net tuition revenue or enrollments. This is an understandable response to resource constraints and continual pressure to do more with less. 
+
+This doesn't mean it's the only outcome or a foregone conclusion. If enrollment managers pointed models at increased economic or racial diversity, then those (fantastic!) outcomes could be optimized too. 
+
+Let me say that louder for the people in the back: Predictive models can, and should be appropriately and ethically deployed to optimize the recruitment and retention of minoritized and underrepresented students. 
+
+### Recommendations and Best Practices
+
+The recent paper from Brookings has plenty of noise, but also some solid recommendations.
+
+#### Start with Interpretable Models
+
+Most of the time, a simple, interpretable model can help advance student success and institutional effectiveness. As a reminder, without data and some predictive analytics, we're just guessing. Nevertheless, we can make reasonable, data-informed decisions without deploying what I refer to as "AI Neural Chatbots on the Blockchain".^[This isn't a thing. It is just the current data science version of the [Rockwell Retro Encambulator](https://www.youtube.com/watch?v=RXJKdh1KZ0w&ab_channel=rlcarnes)]
+
+#### Put Humans at the Center
+
+I am also in accord with the idea of human-centric enrollment management practices. There is no world where educators broadly, or enrollment managers specifically, should just turn over the process to the machines. Instead, institutions should develop processes where enrollment management professionals have the data and support necessary to make student-centered decisions, while also being good stewards of resources that are part of the public's trust.
+
+#### Bring it in House
+
+The recommendations on which I most clearly agree is for colleges and universities to hire and develop their own _internal_ data science teams. This is good practice for multiple reasons:
+
+1. Better understanding of the underlying data and the institutional context that created it.
+
+2. Better ability to explain the model training process, the overall accuracy, and appropriate use cases without bumping into the "proprietary" wall.
+
+3. Ability to optimize on any outcome including enrollment, yield, student success, student debt reduction, course availability, retention, graduation, BIPOC student engagement...anything!)
+
+4. Better alignment with institutional values around data governance, use cases, and model ethics.
+
+### Conclusion
+
+As much as it is a well-worn trope to say it, Enrollment Management is both art and science. It requires a delicate relationship between human beings and computers. Without data (including predictive analytics) enrollment managers would have less information, fewer potential choices, and presumably worse outcomes. 
+
+That doesn't mean that we should detach humans from the process. In fact, the opposite is true. We need more people trained in data science and predictive analytics to care about the existing challenges in higher education and society more broadly. We need to focus our efforts and resources in the most efficient ways to fulfill our research, teaching, and public engagement missions.^[I often refer to the tri-partite missions of research universities, but fully acknowledge that these missions may differ substantially by institution type]
+
+Mostly, we need to have an honest and candid debate about how predictive analytics in higher education are neither bogeyman nor Panacea. They are one of many tools that organizations use to advance their efforts and they shouldn't be feared or maligned. Instead, we should work to understand predictive models and to point them toward outcomes that benefit students, institutions, and society.
+
+### Disclosure and a Word on "Vendors".
+
+I previously worked at one of the companies mentioned in the Brookings paper. One of the main reasons for wanting to write this piece is that Ed Tech companies are routinely portrayed as nefarious shadowy players, which, in my view, they are not.
+
+Nearly everyone in these companies care _a lot_ about students and student outcomes. In fact, many of the folks working in the private education industry bring distinct knowledge and experience from the "on campus" higher ed sector. They understand, perhaps better than anyone, that institutions have limited resources and technical capacity to build useful analytic tools.
+
+Third party tech companies can be great partners, and they can help institutions move forward, or in some cases, keep their doors open. Let's have an honest discussion about this.
+
+Aside from friends and colleagues in the ed-tech sector, I have no personal or financial conflicts of interest.
+
+### A Final Word on the Title
+
+The title of this piece is intended to remind readers that algorithms are created by people. They are used by people. Their outcomes are selected by people. The optimization functions are determined by people. This phrasing was not intended to _in any way_ to relate to the Supreme Court decision _Citizens United v. FEC_ or any subsequent commentary on corporate personhood.

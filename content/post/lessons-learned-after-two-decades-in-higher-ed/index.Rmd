@@ -103,7 +103,7 @@ I routinely bust out this very line to illustrate that we can all learn from one
 
 #### "Listen more, solution less"
 
-It is in my nature to try to solve problems because they are interesting and challenging and fun. As I have moved into leadership/management roles, and spent less and less time in the technical details, I have had to learn (and occasionally needing reminding) that teams sometimes just want to express frustration, to discuss that a problem _exists_, or just to be heard without having someone (else) jump into the solutioning fray. 
+It is in my nature to try to solve problems because they are interesting and challenging and fun. As I have moved into leadership/management roles, and spent less and less time in the technical details, I have had to learn (and routinely need reminding) that teams sometimes just want to express frustration, to discuss that a problem _exists_, or just to be heard without having someone (else) jump into the solutioning fray. 
 
 #### "You can't decide when it rains"
 
