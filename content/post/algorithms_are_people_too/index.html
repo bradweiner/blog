@@ -1,19 +1,23 @@
 ---
-title: Algorithms Are People Too
-author: brad
+title: "Algorithms Are People Too"
+author: "brad"
 date: '2021-09-29'
-slug: algorithms-are-people-too
-categories:
+output:
+  html_document:
+    df_print: paged
+categories: 
   - highered
 tags:
   - datascience
   - emchat
-  - predictivemodels
-subtitle: "Without data, it's just guessing"
-summary: "Maligning algorithms misses the entire reason why they are utilized in the first place"
+  - predictive models
+subtitle: Without data, it's just guessing
+summary: Maligning algorithms misses the entire reason why they are utilized in the
+  first place
 authors: []
 lastmod: '2021-09-29T21:12:26-06:00'
 featured: no
+
 image:
   placement: 1
   caption: Photo Credit Andy Kelly https://unsplash.com/photos/0E_vhMVqL9g
@@ -23,9 +27,9 @@ projects: []
 editor_options:
   markdown:
     wrap: 72
+slug: algorithms-are-people-too
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <div id="introduction" class="section level3">
@@ -43,7 +47,7 @@ editor_options:
 <p>Know what else is an algorithm? The various forms of linear regression that rely on ordinary least squares (OLS). So too is that function in cell B:9 of your Excel spreadsheet. So, pretty much every social scientist and institutional researcher on your entire campus is using algorithms.</p>
 <p>Algorithms (or algos if you’re a Wall Street quant, Stanford graduate, or WeWork investor) have recently taken on a scary mien in large part due to the increased focus on “algorithmic bias”.</p>
 <p>To be clear, predictive models can and do reproduce whatever inputs they were trained on.
-This is a real problem that is well known. But rather than fearing algorithms and banning their use, we should understand them, and be cautious about their implementation in domains where there is a high risk of creating anti-social or regressive outcomes. The higher the risk of a detrimental outcome, the less we should use predictive analytics. For example, predicting recivitism and making judicial recommendations seems too high risk for a mere probability. Deciding to send a less expensive admissions brochure, not so much.</p>
+This is a real problem that is well known. But rather than fearing algorithms and banning their use, we should understand them, and be cautious about their implementation in domains where there is a high risk of creating anti-social or regressive outcomes. The higher the risk of a detrimental outcome, the less we should use predictive analytics. For example, predicting recidivism and making judicial recommendations seems too high risk for a mere probability. Deciding to send a less expensive admissions brochure, not so much.</p>
 </div>
 <div id="how-the-other-99.7-lives" class="section level3">
 <h3>How the Other 99.7% Lives</h3>
@@ -69,20 +73,20 @@ This is a real problem that is well known. But rather than fearing algorithms an
 <p>Let me explain:</p>
 <p>Given the maximizing behavior of highly-mobile students, it turns out that the higher a student’s academic achievements are, the more choices that student has and the <em>less</em> likely that student is to enroll at your institution. Conversely, the weaker the student is, the better your institution looks comparatively.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
 <p>This is noteworthy across the comically over-ranked higher education landscape. To paraphrase a colleague who used to work in admissions at an unnamed Ivy League<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> institution, “everyone has their Joneses.”</p>
-<p>Since this behavior is common and persistent across time, one must assume that any model trained to predict the <em>enrollment</em> outcome on non-admitted students, will probably find that the students with the highest likelihood to enroll are actually the <em>weakest</em> academically. If a school went all-in with this strategy, it would be noticed immediately as the “top” students in the class would get denied or waitlisted, while the “bottom” students would get admitted. Try. Explaining. That.</p>
+<p>Since this behavior is common and persistent across time, one must assume that any model trained to predict the <em>enrollment</em> outcome on non-admitted students, will probably find that the students (on average) with the highest likelihood to enroll are actually the <em>weakest</em> academically. If a school went all-in with this strategy, it would be noticed immediately as the “top” students in the class would get denied or waitlisted, while the “bottom” students would get admitted. Try. Explaining. That.</p>
 <p>With regard to need-based aid, humans should make these decisions too. Federal and state aid are highly-regulated subsidies intended to help low and middle income students afford college. When institutions are granted these dollars, they usually have a variety of reporting and compliance requirements including some grounding in the FAFSA. Not all states operate in this way (some offer block grants) but it is incumbent upon institutions to award these dollars to help lower income families pay for college, then report back on the results.</p>
 </div>
 <div id="group-predictions-vs.-individual-predictions" class="section level4">
 <h4>Group Predictions vs. Individual Predictions</h4>
 <p>The pundits who malign predictive models in higher education seem to have no problem with their use at the group level. After all, without an estimate of how many students are likely to enroll, every downstream projection (tuition, revenue, chemistry labs, faculty hires, residence hall rooms, PPE, isolation spaces, new student advisors, and everything else) would be impossible.</p>
 <p>But beyond that, there be dragons.</p>
-<p>This is a strange position (at least to me) because it effectively removes any potential levers an institution might have to enroll a full class or otherwise meet shape their academic classes for academic majors or programs, or to achieve any other stated goals.</p>
+<p>This is a strange position (at least to me) because it effectively removes any potential levers an institution might have to enroll a full class, meet their academic classes for academic majors or programs, or to achieve any other stated goals.</p>
 <p>Let me explain:</p>
 <p>Imagine an enrollment manager using an algorithm to obtain an estimated group prediction for the total class. For the sake of conversation, let’s call this Enrollment Manager Hal.</p>
 <p>Hal goes to his wonks and finds current forecast is 300 students with a bit of error. Hal also knows that without 320 students there could be layoffs, program closures, furloughs, or a common ailment among enrollment managers: job loss.</p>
-<p>And remember, Hal is at a small, private, religious-founded liberal arts college somewhere between Michisconsin and Missibama. Yield and net tuition revenue have been declining for year. So too have enrollments from minoritized students, first-generational students, humanities majors, and students from West Arkanssouri. Unlike Gothic University and Pristine Lawn College, Hal doesn’t have the ability to simply admit more students who will come from anywhere and pay anything for bumper sticker bragging rights.</p>
+<p>And remember, Hal is at a small, private, religious-founded liberal arts college somewhere between Michisconsin and Missibama. Yield and net tuition revenue have been declining for years. So too have enrollments from minoritized students, first-generational students, humanities majors, and students from West Arkanssouri. Unlike Gothic University and Pristine Lawn College, Hal doesn’t have the ability to simply admit more students who will come from anywhere and pay anything for bumper sticker bragging rights.</p>
 <p>At this point, Hal has essentially one lever left: discounting tuition.</p>
-<p>If there were a policy explicitly banning data use in this instance, Hal could either produce the same intervention for everyone, say, discounting tuition 5% across the board<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> initiating standardized yield efforts (phone calls, communication plans), or recognizing that doing the same thing for everyone is neither efficient nor feasible, perhaps nothing at all.</p>
+<p>If there were a policy explicitly banning data use in this instance, Hal could either produce the same intervention for everyone, say, discounting tuition 5% across the board,<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> initiating standardized yield efforts (phone calls, communication plans), or recognizing that doing the same thing for everyone is neither efficient nor feasible, perhaps nothing at all.</p>
 <p>At some point, Hal would go to the institution’s board and say “I gave it my all, but unfortunately, we are done for the year. I’d love to enroll a full class, but I have no options left.”</p>
 <p>This might sound extreme and melodramatic, but it’s true. Without data informed-decisions, you are either applying the same tactic across the board, or you’re just guessing.</p>
 </div>
@@ -104,7 +108,7 @@ This is a real problem that is well known. But rather than fearing algorithms an
 </div>
 <div id="put-humans-at-the-center" class="section level4">
 <h4>Put Humans at the Center</h4>
-<p>I am also in accord with the idea of human-centric enrollment management practices. There is no world where educators broadly, or enrollment managers specifically should just turn over the process to the machines. Instead, institutions should develop processes where enrollment management professionals have the data and support necessary to make student-centered decisions, while also being good stewards of resources that are part of the public’s trust.</p>
+<p>I am also in accord with the idea of human-centric enrollment management practices. There is no world where educators broadly, or enrollment managers specifically, should just turn over the process to the machines. Instead, institutions should develop processes where enrollment management professionals have the data and support necessary to make student-centered decisions, while also being good stewards of resources that are part of the public’s trust.</p>
 </div>
 <div id="bring-it-in-house" class="section level4">
 <h4>Bring it in House</h4>
@@ -134,7 +138,7 @@ This is a real problem that is well known. But rather than fearing algorithms an
 <h3>A Final Word on the Title</h3>
 <p>The title of this piece is intended to remind readers that algorithms are created by people. They are used by people. Their outcomes are selected by people. The optimization functions are determined by people. This phrasing was not intended to <em>in any way</em> to relate to the Supreme Court decision <em>Citizens United v. FEC</em> or any subsequent commentary on corporate personhood.</p>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>Yes, I am keely aware that Data Scientists and Operations Researchers will point to <em>true</em> optimization in which every possible combination is tested until a mathematically optimal solution is derived. This is just a super fancy way of not guessing<a href="#fnref1" class="footnote-back">↩︎</a></p></li>

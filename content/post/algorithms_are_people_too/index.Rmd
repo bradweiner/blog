@@ -1,19 +1,23 @@
 ---
-title: Algorithms Are People Too
-author: brad
+title: "Algorithms Are People Too"
+author: "brad"
 date: '2021-09-29'
-slug: algorithms-are-people-too
-categories:
+output:
+  html_document:
+    df_print: paged
+categories: 
   - highered
 tags:
   - datascience
   - emchat
-  - predictivemodels
-subtitle: "Without data, it's just guessing"
-summary: "Maligning algorithms misses the entire reason why they are utilized in the first place"
+  - predictive models
+subtitle: Without data, it's just guessing
+summary: Maligning algorithms misses the entire reason why they are utilized in the
+  first place
 authors: []
 lastmod: '2021-09-29T21:12:26-06:00'
 featured: no
+
 image:
   placement: 1
   caption: Photo Credit Andy Kelly https://unsplash.com/photos/0E_vhMVqL9g
@@ -23,6 +27,7 @@ projects: []
 editor_options:
   markdown:
     wrap: 72
+slug: algorithms-are-people-too
 ---
 
 ### Introduction
