@@ -41,10 +41,6 @@ In my very first job, I made a request without communicating the end goal. A sea
 
 When I was a young whippersnapper (unlike the old whippersnapper of today) I hadn't yet learned how to engage audiences or provide feedback without being...shall we say...impolite? A much loved colleague, with whom I am in contact to this day, provided this wisdom which has been a nearly constant reminder that kindness and productive feedback should be the baseline for collegiality, even if there are disagreements.
 
-#### "You should always be looking for jobs"
-
-In a moment of true generosity and transparency, my very first boss indicated that he would be interviewing for a position at another university. Rather than this being a negative lesson that someone is "leaving", this individual suggested that we should always be searching for opportunities. Seeing what else is out there provides the context for your current work situation and often, one of the best ways to get an outside perspective, new experiences, or higher pay. 
-
 #### "You need to learn to pull your own data"
 
 I had no idea who much data and technology would shape, and eventually become my career path. This very early request was not only an indicator that data is important to use in decision-making, but that learning to self-serve and figure it out is way better than just having someone fish for you.
@@ -71,7 +67,7 @@ After I finished grad school, I was figuratively thinking about taking my new Da
 
 So, I set up some informational interviews with some tech companies. After all, it seemed like there were endless opportunity to solve some agnostic machine learning (or 'data mining') problem regardless of how interesting the problem might have been.
 
-One of those calls was with a data science manager from a well-known electric car company run by an eclectic billionaire. The opportunity seemed awesome. It would be with a real DS team^[By this, I mean a team using open source tools, in a collaborative, version-controlled workflow, in a company that could rapidly generate value based on analytic findings]. It was in California. Options were available. It seemed awesome.
+One of those calls was with a data science manager from a well-known electric car company run by an eclectic billionaire. The opportunity seemed awesome. It would be with a real DS team^[By this, I mean a team using open source tools, in a collaborative, version-controlled workflow, in a company that could rapidly generate value based on analytic findings]. It was in California. Options were available. All the things.
 
 But then I learned about the business problem.
 
