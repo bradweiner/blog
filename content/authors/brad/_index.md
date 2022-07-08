@@ -47,7 +47,7 @@ superuser: true
 user_groups:
 ---
 
-Brad Weiner is the Interim Chief Data Officer at The University of Colorado Boulder.  
+Brad Weiner is the Chief Data Officer at The University of Colorado Boulder.  
 
 He lives in Erie, CO.  
 

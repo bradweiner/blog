@@ -41,6 +41,6 @@ user_groups:
 - Visitors
 ---
 
-Brad Weiner is the Senior Director of Data Science at Capture Higher Ed. 
+Brad Weiner is the Chief Data Officer at The University of Colorado Boulder. 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
