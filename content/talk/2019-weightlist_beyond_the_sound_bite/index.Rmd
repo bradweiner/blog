@@ -1,0 +1,40 @@
+---
+title: Episode 32. Beyond the Sound Bite. A Dive Into Federal Financial Aid Policy
+  with Justin Draeger
+authors:
+- brad
+- Thom Golden
+date: '2019-03-01T09:45:00Z'
+event_url: https://open.spotify.com/episode/0tbOYkaXy7O48K6XPzi4on?si=UW9DjCpWT5KGVI-6ECiV5g
+location: Land of Horses and Bourbon, Louisville, KY
+abstract: Thom and Brad take the show to our Washington D.C. for a conversation with
+  Justin Draeger, President and CEO of the National Association of Student Financial
+  Aid Administrators. In this episode, we discuss policy positions on a variety of
+  topics including the Pell Grant, whether there is a student loan crisis, free college,
+  and the similarities between The Weightlist and Good Morning America.
+summary: How Much is Pell Again?
+event: Podcast
+all_day: no
+categories: 
+ - podcast
+tags: 
+ - weightlist
+lastmod: '2019-03-01'
+featured: no
+image:
+  caption: '[](https://pbs.twimg.com/profile_images/793912913106968577/yhQ-L9yo_400x400.jpg)'
+  focal_point: ''
+  preview_only: no
+projects: []
+links:
+- icon: podcast
+  icon_pack: fas
+  name: Listen
+  url: https://open.spotify.com/episode/0tbOYkaXy7O48K6XPzi4on?si=UW9DjCpWT5KGVI-6ECiV5g
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/brad_weiner
+---
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0tbOYkaXy7O48K6XPzi4on?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
