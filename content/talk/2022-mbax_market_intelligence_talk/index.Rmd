@@ -25,7 +25,7 @@ links:
 - icon: images
   icon_pack: fas
   name: slides
-  url: https://bradweiner.info/files/higher_ed_feature_or_bug.pdf
+  url: https://bradweiner.info/files/market_intelligence_talk.pdf
 - icon: github
   icon_pack: fab
   name: code
