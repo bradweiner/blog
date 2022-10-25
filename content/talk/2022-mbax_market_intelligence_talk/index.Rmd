@@ -1,0 +1,37 @@
+---
+title: A Gentle Reminder to Question the Underlying Data
+authors: [brad]
+date: '2022-10-25T12:00:00Z'
+location: Leeds School of Business, University of Colorado Boulder
+abstract: 'It is all too common to take data at face value. This talk will be a reminder to question what and how you collect data and measure key performance indicators.'
+summary: 'When you get data, it is important to understand how it was collected, what it means, and whether what you are measuring actually matters. This talk will highlight some real world data questions to help you think about the story underneath the data.'
+event: CU Boulder MBA Advanced Electives. MBAX 6330
+all_day: no
+categories: 
+- talk
+tags:
+- datascience
+- cuboulder
+- leeds
+lastmod: '2022-10-24'
+featured: no
+image:
+  caption: '[Photo by Veronica Benavides on Unsplash](https://unsplash.com/photos/W6NGECt_yE4)'
+  focal_point: ''
+  preview_only: no
+projects: []
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: https://bradweiner.info/files/higher_ed_feature_or_bug.pdf
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/bradweiner/market_intelligence_talk
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/brad_weiner
+---
