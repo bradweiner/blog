@@ -1,6 +1,5 @@
 ---
-authors: 
-  - brad
+authors: brad
 bio: My research interests include higher education policy, data science, enrollment
   management, and institutional advancement.
 education:
@@ -44,22 +43,25 @@ social:
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0003-0070-4385
+- icon: mastodon
+  icon_pack: fab
+  link: https://mastodon.social/@bradweiner
 superuser: yes
 user_groups: null
 ---
 
-Brad Weiner is the Chief Data Officer at The University of Colorado Boulder.  
+Brad Weiner is the Chief Data Officer at The University of Colorado Boulder.
 
-He lives in Erie, CO.  
+He lives in Erie, CO.
 
 Perspectives and ideas on this site are my own and do not represent current or past employers.
 
-For best appearance and menu functionality, please view site on non-mobile browser. 
+For best appearance and menu functionality, please view site on non-mobile browser.
 
 If viewing on mobile, be sure to check out:
 
-* [Blog](https://bradweiner.info/post/)
-* [Presentations and Talks](https://bradweiner.info/talk)
-* [Higher Ed + Data Science Consulting](https://bradweiner.info/consulting/)
-* [Contact](https://bradweiner.info/#contact)
-* [CV/Resume](https://bradweiner.info/files/weiner_brad_resume.pdf)
+-   [Blog](https://bradweiner.info/post/)
+-   [Presentations and Talks](https://bradweiner.info/talk)
+-   [Higher Ed + Data Science Consulting](https://bradweiner.info/consulting/)
+-   [Contact](https://bradweiner.info/#contact)
+-   [CV/Resume](https://bradweiner.info/files/weiner_brad_resume.pdf)
