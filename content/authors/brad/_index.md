@@ -45,7 +45,7 @@ social:
   link: https://orcid.org/0000-0003-0070-4385
 - icon: mastodon
   icon_pack: fab
-  link: https://mastodon.social/@bradweiner
+  link: https://fosstodon.org/@bradweiner
 superuser: yes
 user_groups: null
 ---
