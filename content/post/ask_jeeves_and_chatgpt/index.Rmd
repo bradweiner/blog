@@ -35,7 +35,7 @@ Do you remember the first time you used Google?
 
 I sure do. My friend Spencer showed it to me on an old laptop in my now-[demonlished](https://www.kansan.com/news/kbor-approves-demolition-of-55-year-old-oliver-hall/article_479aff3e-916b-11eb-bc91-9fb91b2a7095.html) first-year residence hall. ^[check out that higher ed lingo!]
 
-It was remarkable how quickly it got answers and how effectively it sorted the best content. I Googled for hours on end, enjoying the luxurty of information at my fingertips, delivered at sweet, sweet, residence hall T1 speeds ^[For people in my age group, you will recall that getting email and having T1 were real perks of higher education.] It felt like magic. ^[This was in 1999, before Google had fully monitized ads giving rise to SEO, marketing automation, and the awful ad chum bucket we experience on today's web.] 
+It was remarkable how quickly Google found answers and how it effectively sorted the best content. I Googled for hours on end, enjoying the luxurty of information at my fingertips, delivered at sweet, sweet, residence hall T1 speeds ^[For people in my age group, you will recall that getting email and having T1 were real perks of higher education.] It felt like magic. ^[This was in 1999, before Google had fully monitized ads giving rise to SEO, marketing automation, and the awful ad chum bucket we experience on today's web.] 
 
 I had a similar, but perhaps less enthusiastic enjoyment when I first got to Ask Jeeves questions rather than clicking through the endless, non-searchable Yahoo directory which, was a giant improvement over, well...nothing at all. ^[later on in the timeline, my mind was also blown the first time I used Napster, watching Ken Jennings get schooled on Jeopardy by IBM's Waston, and then having that voice-assistive tech brought to my house in the form of Amazon Echo Dot.]
 
@@ -57,11 +57,15 @@ The rationale is this: a liberal arts, technical, or creative education isn't ju
 
 Put another way: It's easier for people who are _traditionally_ educated to query "Build me a Python tutorial" and self-learn from there, than it is for someone who isn't quite sure what they want to learn, or what problems Python might solve in the first place. Furthermore, those who are _traditionally_ educated are (in my opinion) more likely to detect logical flaws, inaccuracies, or factual holes. Self-learners, autodidacts, and the _traditionally_ educated will benefit tremendously from AI-generated educational pathways, but the rest of the population may still need some guidance.
 
-I don't want to suggest that these tools aren't educational groundbreaking or that they might not substantially change the way that we teach and learn. Furthermore, I don't want to suggest that the patches-on-jackets experience will be the model forever. Higher education demands faster, cheaper, skill-based credentialing options that help educate more students, without the limiting fixed costs of a synchronous, classroom environment. Educators and institutions would be wise to leverage AI for its speed, flexibility, and economies of scale. But, buyer beware, early reports indicate that factual information from ChatGPT _seem_ awesome, but may be gloriously, confidently, [wrong](https://mashable.com/article/chatgpt-amazing-wrong).
+I don't want to suggest that these tools aren't educational groundbreaking or that they might not substantially change the way that we teach and learn. Furthermore, I don't want to suggest that the patches-on-jackets experience will be the model forever. 
+
+Higher education demands faster, cheaper, skill-based credentialing options that help educate more students, without the limiting fixed costs of a synchronous, classroom environment. Educators and institutions would be wise to leverage AI for its speed, flexibility, and economies of scale. But, buyer beware, early reports indicate that factual information from ChatGPT _seem_ awesome, but may be gloriously, confidently, [wrong](https://mashable.com/article/chatgpt-amazing-wrong).
 
 ### Generative Language AI and Changes to Pedagogy
 
-If the assumption above holds and our millennium-old institutions of higher education are not fully destroyed, then how will colleges and universities adopt these new technologies into our existing practices? This seems to be a much more interesting question since ChatGPT and it's improved successors _can_ do a lot of what we ask students to do: write essays, answer questions, generate code, apply for admission, etc. If students can use ChatGPT to generate seemingly original work, then how are we going to train^[ML joke bingo!] students to think critically, write convincing arguments or not pass off AI-generated work as their own?
+If the assumption above holds and our millennium-old concept of higher education is not fully destroyed, then how will colleges and universities adopt these new technologies into our existing practices? This seems to be a much more interesting question since ChatGPT and it's improved successors _can_ do a lot of what we ask students to do: write essays, answer questions, generate code, apply for admissions, and much more. 
+
+If students can use ChatGPT to generate seemingly original work, then how are we going to train^[ML joke bingo!] students to think critically, write convincing arguments or not pass off AI-generated work as their own?
 
 Although I will openly admit to not having perfect answers, allow me to humbly propose a few ways in which educators can utilize modern AI tools while _also_ developing graduates capable of thinking in a complex world. Please note that I am generally not into "futurism" and recognize that predictions are routinely wrong. I am not trying to indicate that this what the world _will_ look like, but instead, presenting some ideas about ways in which generative language bots like ChatGPT could benefit the academic enterprise, without completely tearing it down.
 
@@ -77,21 +81,27 @@ ChatGPT can produce workable text. However, the examples (even if correct) are b
 
 AI is powerful and has every opportunity to _improve_ our lives especially in the context of repetitive tasks that can be automated. This, in theory, leaves more time for the deeper creative and analytic work at which humans excel. This is already happening in a variety of [industries.](https://www.contxmedia.com/robot-lawyers-save-morgan-stanley-millions-soliciting-fees) 
 
-As someone who finds the endless maze of finding papers related to a research question, well...boring, I can imagine this being a space that is prime for some AI-guided assistance. For example, one might use ChatGPT (or its improved successors) for generating literature review summaries, course reading lists, article graphs, or bibliographies. If AI were able to rapidly synthesize the current state of the literature, it could also, potentially, detect or even recommend studies that would fill existing gaps, or surface discrepancies between similar studies that are ripe for reproduction. 
+One example that comes to mind is the literature review and knowledge discovery process that must happen before developing a novel research question. To be clear, this is a critical skill that should be taught (and not automated) in graduate programs. Still, I would argue that this is the _type_ of work that could benefit from AI. The systematic Googling and library searches, reading through paper abstracts, chasing earlier work through the citations, and determining places of agreement or disagreement in the existing literature can be pretty repetitive and exhausting. 
+
+If AI can reduce the repeitive task of reading legal documents, that isn't too far from "reading" academic papers and having them rapidly summarized. One might use ChatGPT (or its improved successors) for generating literature review summaries, course reading lists, article graphs, or bibliographies. If AI were able to rapidly synthesize the current state of the literature, it may also, detect or even recommend studies that would fill existing gaps, or surface discrepancies between similar studies that are ripe for reproduction. 
 
 I am guessing this idea won't be popular among scholars who believe that the searching and the reading are part of the discovery process. Nevertheless, we have to ask ourselves whether some work that has previously been viewed as "critical" exists because we didn't have an easier, more efficient way. If something like this were to be available, then maybe the "disruption" to academic research is actually a way to have less overlap in existing work, more novel research, and expedited timeline from idea to knowledge.
 
 #### Use Students as Human AI Trainers
 
-One of the best parts of ChatGPT is that it has clearly been honed and trained with the help of human beings who understand language and context. As AI becomes more accessible to build and deploy, surely one of the best educational use cases is to have students learn to build, train, and validate their own AI models. As much as we worry about it changing education, it is pretty clear that new technologies will precipitate new jobs and industries. 
+One of the best parts of ChatGPT is that it has clearly been tuned with the help of human beings who understand language and context. As AI becomes more accessible to build and deploy, surely one of the best educational use cases is to have students learn to build, train, and validate their own AI models. As much as we worry about it changing education, it is pretty clear that new technologies will precipitate new jobs and industries. 
 
 ### Conclusion
 
+ChatGPT and similar AI models are almost certainly going to change the ways in which we live, work, and study. With better data sets, and improved human tuning, we may enter a world where _some_ of the tasks that we previously took on, can now be automated or semi-automted.
+
+That being said, I am not convinced (yet) that these AI tools can so dramatically upend the academic enterprise. This is largely because education is so much more that completing assignments and getting grades. Students (in my view) will continue to pursue the educational experiences that allow them opportunities to the big, thorny, difficult problems that require more than a mediocre AI-generated essay. 
+
 If you believe that education is some sort of home school workbook whereby correct answers to existing questions can be checked off in step wise fashion until some badge is unlocked, then ChatGPT or similar tools can and will be an acceptable substitute. If you believe that education is an exploration of ideas, and method by which you _learn_ how to _learn_ then ChatGPT can be a remarkable discovery tool, without replacing a human-centered educational experience.
 
-### Examples
+### Example
 
-I know some people who spent all weekend with the tool. I have barely scratched the surface but some initial queries included the following
+If social media is any indicator, many of you spent considerable time with ChatGPT geting prompts answered. Here is a personal favorite, just for fun. 
 
 Me: *write a bluegrass song describing breakfast menu items*  
 AI: 
