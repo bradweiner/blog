@@ -1,0 +1,44 @@
+---
+title: CDOs’ Perspectives on the Role of IR in Data Strategy
+authors:
+  - Ravneet Chadha, University of Arizona
+  - Olivia Kew-Fickus, Vanderbilt University
+  - Brad Weiner, University of Colorado Boulder
+  - Benjamin Wiles, Clemson University
+  - Katie Wilkinson, University of Missouri
+event: Association for Institutional Research (AIR) Forum
+event_url: https://www.airweb.org/forum/2023/home
+location: Cleveland, OH
+abstract: 'Chief Data Officers are becoming increasingly common on college campuses. As individuals tasked with developing and implementing a campuswide data strategy, CDOs have to rightfully understand the role of institutional research, and its place in the broader strategy. In order to fully realize the AIR/EDUCAUSE/NACUBO call to create “Change with Analytics”, finding the proper alignments and getting feedback from the IR community will be necessary for success. This session will discuss that very tension and highlight some lack of agreement among CDOs on this very issue. The goal is to help IR leaders and practitioners see their work in the context of a broader analytic strategy, and to begin a roadmap for CDOs facing a similar task on their own campuses. ' 
+summary: 'CDOs and IR can work together to enable campus data strategy. How can we get there together?'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2023-05-30T12:00:00Z"
+#date_end: "2019-09-12T12:00:00Z"
+all_day: false
+
+categories:
+- talk
+tags:
+- cdos
+- air
+- institutionalresearch
+lastmod: '2023-05-31'
+featured: no
+image:
+  caption: 
+  focal_point: ''
+  preview_only: no
+projects: []
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: https://bradweiner.info/files/cdo_air_presentation_final_2023-05-30.pdf
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/brad_weiner
+---
