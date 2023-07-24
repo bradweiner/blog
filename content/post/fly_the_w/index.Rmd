@@ -1,8 +1,8 @@
 ---
 title: "Lessons Learned from Building a Silly Twitter Bot"
 author: "brad"
-date: '2021-04-29'
-slug: lessons-learned-from-building-a-silly-twitter-bot
+date: "2021-04-29"
+slug: "lessons-learned-from-building-a-silly-twitter-bot"
 categories:
 - r
 - python
@@ -12,10 +12,10 @@ tags:
 - sideprojects
 - cubs
 - dessert
-subtitle: 'I am not a data engineer, but I play one in this blog. Badly.'
+subtitle: I am not a data engineer, but I play one in this blog. Badly.
 summary: ''
 authors: []
-lastmod: '2021-04-29T08:53:42-06:00'
+lastmod: "2021-04-29T08:53:42-06:00"
 featured: yes
 image:
   placement: 1
@@ -348,6 +348,14 @@ It also gave me the idea to give this bot its own hashtag `#FlyTheWBot` which ma
 
 3. On opening day 2020, when everything went awry, it wasn't long before someone pointed that out to me. Again, this is a low-stakes, silly Twitter bot, but in the real world, this would be the "Your-system-is-broken-cancel-your-weekend" kind of notification. This feedback is the kind that can't go ignored. It is also reminder that end users or clients are often the first to notice when something is down. Have a process in place to quickly discover outages and a rapid response plan to correct them. 
 
+### Lesson #7: Know When to Fold 'Em
+
+Sometimes the juice just isn't worth the squeeze and it's worth knowing when it's time to pack up. After Elon Musk took over Twitter in October, 2022, there were immediate and frustrating changes to the way that Twitter behaved. Most critcally, the API endpoints changed, along with the rules for running automated accounts. These changes, caused breakage in the underlying code, especially since the API wrappter R package {rtweet} was not being actively maintained. All of this led me to realize that as much fun as this project has been, it is no longer worth maintaining. 
+
+So, it is time to shut it down. The Twitter @flythewbot Twitter (now, X, which is so stupid) has Tweeted it's last Cubs win.
+
+Thanks for hanging out for the journey. Now, I need to find some other project to take on...
+
 ### TL;DR
 
 * Side projects are an awesome way to learn new tech skills
@@ -355,6 +363,7 @@ It also gave me the idea to give this bot its own hashtag `#FlyTheWBot` which ma
 * Putting a data pipeline into production is complicated, but well worth the effort.
 * Every data scientist should test out AWS or other cloud environments on a low-stakes, low-cost project. This project should simulate what a real-world setup that _could_ be higher stakes.
 * Mistakes will happen. Enjoy them and learn from them.
+* Projects eventually run their course. Know when it is time to cut bait, when when it is time to keep fishing.
 * Give thanks to everyone who helped along the way :point_down:
 
 ### Acknowledgements
