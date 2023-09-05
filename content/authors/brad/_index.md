@@ -24,8 +24,7 @@ interests:
 - University Finance
 name: Brad Weiner
 organizations:
-- name: Chief Data Officer, University of Colorado Boulder
-  url: https://www.colorado.edu/
+- name: Data Leadership | Data Strategy | Data Science
 role: ''
 social:
 - icon: envelope
