@@ -49,7 +49,7 @@ superuser: yes
 user_groups: null
 ---
 
-Brad Weiner is the Chief Data Officer at The University of Colorado Boulder.
+Brad Weiner is seeking new opportunities to advance your organization's capacity to move from research question to business value. I have substantial expertise in higher education, and am open to exploring new domains.
 
 He lives in Erie, CO.
 
