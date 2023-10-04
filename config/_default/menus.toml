@@ -6,17 +6,17 @@
 [[main]]
 name = "Blog"
 url = "/post"
-weight = 20
+weight = 1
 
 [[main]]
 name = "Higher Ed + Data Science Consulting"
 url = "/consulting"
-weight = 40
+weight = 3
 
 [[main]]
 name = "Presentations and Talks"
 url = "/talk"
-weight = 30
+weight = 2
 
 #[[main]]
 #name = "Publications"
@@ -26,11 +26,11 @@ weight = 30
 [[main]]
 name = "Contact"
 url = "#contact"
-weight = 60
+weight = 4
 
 #Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
  [[main]]
 name = "CV/Resume"
 url = "files/weiner_brad_resume.pdf"
-weight = 70
+weight = 5
