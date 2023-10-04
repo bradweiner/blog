@@ -51,7 +51,7 @@ user_groups: null
 
 Brad Weiner is seeking new opportunities to advance your organization's capacity to move from research question to business value. I have substantial expertise in higher education, and am open to exploring new domains.
 
-He lives in Erie, CO.
+He lives in Colorado.
 
 Perspectives and ideas on this site are my own and do not represent current or past employers.
 
