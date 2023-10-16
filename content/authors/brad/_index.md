@@ -30,6 +30,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
+- icon: square
+  icon_pack: fas
+  link: https://bsky.app/profile/bradweiner.bsky.social
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/brad_weiner
@@ -39,9 +42,9 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/bradweinerprofile/
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/0000-0003-0070-4385
+# - icon: orcid
+#   icon_pack: ai
+#   link: https://orcid.org/0000-0003-0070-4385
 - icon: mastodon
   icon_pack: fab
   link: https://fosstodon.org/@bradweiner
