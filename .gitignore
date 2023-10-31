@@ -1,12 +1,14 @@
 .Rproj.user
 .Rhistory
 .RData
+.Rprofile
 .Ruserdata
 blogdown/
 public/
 content/post/a_great_day_in_harlem/*
+content/post/think-first-code-later/*
+content/post/higher_ed_research/*
 content/post/gpa_breakdown/*
-content/post/covid19_data_science/*
 content/post/fly_the_w/fly_the_w.R
 content/post/fly_the_w/avg_game_time.R
 content/blog/a_great_day_in_harlem/*
