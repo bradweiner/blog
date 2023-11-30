@@ -18,10 +18,10 @@ name = "Presentations and Talks"
 url = "/talk"
 weight = 2
 
-[[main]]
-name = "Projects"
-url = "/project"
-weight = 4
+# [[main]]
+# name = "Projects"
+# url = "/project"
+# weight = 4
 
 #[[main]]
 #name = "Publications"
