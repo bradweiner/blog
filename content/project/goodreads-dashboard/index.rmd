@@ -14,7 +14,7 @@ subtitle: ''
 summary: 'This small project was a prototype of the Quarto dashboard output'
 authors: []
 lastmod: '2023-11-30T10:20:24-07:00'
-featured: no
+featured: yes
 image:
   caption: ''
   focal_point: ''
