@@ -1,0 +1,28 @@
+---
+title: 'Quarto Dashboard Using Personal Goodreads Data'
+author: 'brad'
+date: '2023-11-30'
+slug: []
+categories:
+- project
+tags: 
+- quarto
+- personal-data
+- goodreads
+- proof-of-concept
+subtitle: ''
+summary: 'This small project was a prototype of the Quarto dashboard output'
+authors: []
+lastmod: '2023-11-30T10:20:24-07:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+links:
+- icon: images
+  icon_pack: fas
+  name: link
+  url: https://goodreads-dash.netlify.app/
+---
