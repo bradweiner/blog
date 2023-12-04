@@ -18,6 +18,8 @@ content/blog/a_great_day_in_harlem/*
 content/blog/covid19_data_science/*
 content/talk/example/
 content/blog/*
+/.quarto/
+
 # Ignore everything
 #*
 
@@ -32,4 +34,3 @@ content/blog/*
 #!*/a/b/file1.txt
 #!*/a/b/c/*
 
-/.quarto/
