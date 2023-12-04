@@ -3,6 +3,9 @@
 .RData
 .Rprofile
 .Ruserdata
+*.lock~
+*.md
+*.md~
 blogdown/
 public/
 content/post/a_great_day_in_harlem/*
@@ -28,3 +31,5 @@ content/blog/*
 # if the files to be tracked are in subdirectories
 #!*/a/b/file1.txt
 #!*/a/b/c/*
+
+/.quarto/
