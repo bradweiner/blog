@@ -13,7 +13,7 @@ tags:
   - highered
   - ai
   - chatgpt
-subtitle: Why new AI language models should blow your mind, but may not dramatically change your educational experience
+subtitle: 'Why new AI language models should blow your mind, but may not dramatically change your educational experience'
 summary: We should be rightfully amazed language models like ChatGPT. We should incorporate it into the classroom.
 authors: []
 lastmod: '2023-01-02T14:59:30-06:00'

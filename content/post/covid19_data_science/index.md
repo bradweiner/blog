@@ -3,6 +3,9 @@ title: 'Data Science on Campus: One Year Retrospective'
 author: "Brad"
 date: "2020-10-26"
 slug: "covid-19-on-campus-data-science-edition"
+output:
+  html_document:
+    df_print: paged
 categories:
 - highered
 - covid19
